@@ -1,0 +1,2781 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="2026@right resolved">
+<meta name="copyright" content="© 2026 Right Resolved. All rights reserved.">
+<title>B.Com 1 થી 6 - અભ્યાસ સાહિત્ય + Motivation | 2026@right resolved</title>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<style>
+  :root{
+    --header-grad-1:#f7b733;
+    --header-grad-2:#f2971d;
+    --home-bg:#5c3f16;
+    --home-bg-2:#7a561f;
+    --cream:#faefd9;
+    --card-gold:#e3a934;
+    --card-gold-edge:#8c5a1c;
+    --text-dark:#241a0c;
+    --white:#ffffff;
+    --cat-books:#9c7a2e;
+    --cat-mcq:#1fa8e0;
+    --cat-lang:#8a3737;
+    --cat-blueprint:#1a3ba3;
+    --cat-old:#767676;
+    --green:#2f7d32;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{
+    margin:0;
+    font-family:'Noto Sans Gujarati','Shruti','Segoe UI',sans-serif;
+    background:#2b2b2b;
+    display:flex;
+    justify-content:center;
+    min-height:100vh;
+  }
+  #phone{
+    width:100%;
+    max-width:430px;
+    min-height:100vh;
+    background:var(--cream);
+    position:relative;
+    overflow-x:hidden;
+    box-shadow:0 0 40px rgba(0,0,0,.5);
+  }
+  header{
+    background:linear-gradient(135deg,var(--header-grad-1),var(--header-grad-2));
+    padding:14px 12px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    position:sticky;
+    top:0;
+    z-index:20;
+  }
+  header .back{
+    background:none;
+    border:none;
+    font-size:24px;
+    color:var(--text-dark);
+    cursor:pointer;
+    line-height:1;
+    padding:4px 6px;
+    visibility:hidden;
+  }
+  header .back.show{visibility:visible;}
+  header h1{
+    font-size:19px;
+    margin:0;
+    color:var(--text-dark);
+    font-weight:700;
+    flex:1;
+  }
+  #screen-home{
+    background:linear-gradient(180deg,var(--home-bg),var(--home-bg-2));
+    min-height:100vh;
+    padding:16px 12px 50px;
+  }
+  .home-topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin:2px 2px 12px;
+  }
+  .home-topbar .title{
+    color:var(--cream);
+    font-size:18px;
+    font-weight:700;
+    margin:0;
+  }
+  .icon-btns{display:flex;gap:7px;}
+  .icon-btns button{
+    background:rgba(255,255,255,.18);
+    border:none;
+    color:#fff;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    font-size:15px;
+    cursor:pointer;
+  }
+  .icon-btns button:active{background:rgba(255,255,255,.35);}
+
+  /* ===== MOTIVATION BOX ===== */
+  .motivation-box{
+    background:linear-gradient(135deg,#fff8e7,#ffe9b8);
+    border-radius:14px;
+    padding:16px 14px;
+    margin-bottom:16px;
+    box-shadow:0 4px 14px rgba(0,0,0,.25);
+    border-left:5px solid #e0a800;
+    position:relative;
+  }
+  .motivation-box .label{
+    font-size:11px;
+    font-weight:700;
+    color:#8c5a1c;
+    letter-spacing:0.5px;
+    margin-bottom:6px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .motivation-box .quote{
+    font-size:15.5px;
+    font-weight:700;
+    color:var(--text-dark);
+    line-height:1.55;
+    margin:0 0 8px;
+  }
+  .motivation-box .author{
+    font-size:12px;
+    color:#8a6a2a;
+    font-style:italic;
+  }
+  .motivation-box .refresh{
+    position:absolute;
+    top:10px;
+    right:10px;
+    background:rgba(140,90,28,.15);
+    border:none;
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    font-size:14px;
+    cursor:pointer;
+  }
+
+  /* Daily Goal */
+  .daily-goal{
+    background:rgba(255,255,255,.12);
+    border-radius:12px;
+    padding:12px 14px;
+    margin-bottom:14px;
+    color:#fff;
+  }
+  .daily-goal .goal-title{font-size:13px;font-weight:600;margin-bottom:6px;opacity:.9;}
+  .daily-goal .goal-row{display:flex;align-items:center;gap:10px;}
+  .daily-goal input[type=number]{
+    width:55px;padding:6px 8px;border-radius:6px;border:none;
+    font-size:15px;font-weight:700;text-align:center;
+  }
+  .daily-goal .goal-btn{
+    background:#2f7d32;color:#fff;border:none;padding:7px 12px;
+    border-radius:6px;font-weight:700;font-size:13px;cursor:pointer;
+  }
+  .daily-goal .goal-status{font-size:12px;margin-top:6px;opacity:.85;}
+
+  .list-card{
+    background:var(--white);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 6px 18px rgba(0,0,0,.3);
+  }
+  .list-row{
+    padding:18px 16px;
+    text-align:center;
+    font-size:18px;
+    font-weight:600;
+    color:var(--text-dark);
+    border-bottom:1px solid #eee2c9;
+    cursor:pointer;
+  }
+  .list-row:last-child{border-bottom:none;}
+  .list-row:active{background:#f5ecd4;}
+
+  .tabs{
+    display:flex;
+    background:linear-gradient(135deg,var(--header-grad-1),var(--header-grad-2));
+    padding:0 4px 10px;
+  }
+  .tab{
+    flex:1;text-align:center;padding:8px 4px;font-size:14px;
+    font-weight:700;color:#7a5210;cursor:pointer;
+    border-bottom:3px solid transparent;
+  }
+  .tab.active{color:var(--text-dark);border-bottom:3px solid #2f7d32;}
+
+  #screen-standard .content, #screen-subjects .content,
+  #screen-chapters .content, #screen-favorites .content,
+  #screen-tools .content, #screen-notes .content{
+    padding:16px 12px 40px;
+  }
+
+  .cat-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;}
+  .cat-card{
+    aspect-ratio:1/1;border-radius:10px;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;color:#fff;font-weight:700;
+    font-size:13.5px;text-align:center;padding:8px;cursor:pointer;
+    box-shadow:0 3px 8px rgba(0,0,0,.25);
+  }
+  .cat-card:active{transform:scale(.96);}
+  .cat-card svg{width:32px;height:32px;margin-bottom:7px;fill:#fff;}
+
+  .subj-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;}
+  .subj-card{
+    position:relative;
+    background:linear-gradient(90deg,var(--card-gold-edge) 0 7px,var(--card-gold) 7px 100%);
+    border-radius:5px;min-height:105px;display:flex;flex-direction:column;
+    padding:10px 6px 16px;box-shadow:0 3px 8px rgba(0,0,0,.2);
+  }
+  .subj-actions{position:absolute;top:3px;right:3px;display:flex;gap:3px;z-index:2;}
+  .subj-icon-btn{
+    width:20px;height:20px;background:rgba(255,255,255,.4);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-size:11px;cursor:pointer;
+  }
+  .subj-name{
+    flex:1;display:flex;align-items:center;justify-content:center;
+    text-align:center;font-weight:700;font-size:13.5px;color:var(--text-dark);
+    cursor:pointer;padding-top:8px;
+  }
+  .subj-progress{
+    position:absolute;bottom:4px;right:5px;font-size:10px;
+    background:rgba(0,0,0,.28);color:#fff;padding:1px 6px;border-radius:8px;
+  }
+  .subj-add{
+    border:2px dashed #8c5a1c;background:transparent;color:#8c5a1c;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:3px;font-weight:700;font-size:12px;min-height:105px;border-radius:5px;cursor:pointer;
+  }
+  .subj-add .plus{font-size:24px;line-height:1;}
+
+  .chap-progress{margin:0 0 14px;}
+  .prog-label{font-size:12px;color:#7a5210;margin-bottom:5px;font-weight:700;}
+  .prog-track{height:8px;background:#e9dcb8;border-radius:6px;overflow:hidden;}
+  .prog-fill{height:100%;background:linear-gradient(90deg,#2f7d32,#66bb6a);transition:width .25s;}
+
+  .chap-card{
+    background:#fff;border-radius:9px;margin-bottom:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,.12);overflow:hidden;
+  }
+  .chap-head{
+    display:flex;align-items:center;gap:7px;padding:13px 11px;
+    cursor:pointer;font-size:15px;font-weight:600;color:var(--text-dark);
+  }
+  .chap-head svg{width:17px;height:17px;fill:#c99a2e;flex-shrink:0;transition:transform .2s;}
+  .chap-head.open svg{transform:rotate(180deg);}
+  .chap-title{flex:1;}
+  .chk{display:flex;align-items:center;}
+  .chk input{width:17px;height:17px;cursor:pointer;accent-color:#2f7d32;}
+  .star{font-size:20px;color:#c9a227;cursor:pointer;padding:0 2px;flex-shrink:0;}
+  .star.active{color:#e0a800;}
+  .chap-bar{height:3px;background:linear-gradient(90deg,#8c5a1c,#c23b3b,#6a3c9c,#1f6fc2);}
+  .chap-body{max-height:0;overflow:hidden;transition:max-height .28s ease;background:#fbf6e9;font-size:14px;color:#5a4a2c;line-height:1.55;}
+  .chap-body-inner{padding:13px 14px;}
+
+  .empty-note{text-align:center;color:#8a7a55;font-size:14px;margin-top:28px;line-height:1.6;}
+  .search-bar{margin:0 0 12px;display:flex;}
+  .search-bar input{
+    flex:1;padding:10px 13px;border-radius:8px;border:1px solid #d8c79a;
+    font-size:14px;background:#fff;
+  }
+
+  .fav-row{
+    background:#fff;border-radius:9px;padding:13px 14px;margin-bottom:9px;
+    box-shadow:0 2px 6px rgba(0,0,0,.1);cursor:pointer;
+  }
+  .fav-row:active{background:#f7f0da;}
+  .fav-sub{font-size:12px;color:#8a7a55;margin-bottom:3px;font-weight:600;}
+  .fav-title{font-size:15px;font-weight:700;color:var(--text-dark);}
+
+  /* PDF */
+  #screen-pdf{display:none;background:#181818;min-height:100vh;}
+  #pdfToolbar{
+    display:flex;align-items:center;gap:8px;padding:10px 12px;
+    background:#222;position:sticky;top:0;z-index:10;
+  }
+  #pdfToolbar button{
+    background:#3a3a3a;border:none;color:#fff;padding:8px 12px;
+    border-radius:6px;font-size:14px;cursor:pointer;
+  }
+  #pdfPageInfo{color:#ccc;font-size:13px;flex:1;text-align:center;}
+  #pdfCanvasWrap{overflow:auto;padding:0;height:calc(100vh - 52px);}
+  #pdfIframe{width:100%;height:100%;border:none;background:#111;}
+  .pdf-btn{
+    display:inline-block;background:linear-gradient(135deg,#2f7d32,#66bb6a);
+    color:#fff;border:none;padding:11px 18px;border-radius:8px;
+    font-size:14.5px;font-weight:700;cursor:pointer;margin-top:7px;width:100%;
+  }
+
+  /* Tools / Timer / Notes */
+  .tool-card{
+    background:#fff;border-radius:12px;padding:16px;margin-bottom:14px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+  }
+  .tool-card h3{margin:0 0 10px;font-size:16px;color:var(--text-dark);}
+  .timer-display{
+    font-size:42px;font-weight:800;text-align:center;color:var(--text-dark);
+    letter-spacing:2px;margin:10px 0 14px;
+  }
+  .timer-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
+  .timer-btns button{
+    padding:10px 16px;border:none;border-radius:8px;font-weight:700;
+    font-size:14px;cursor:pointer;color:#fff;
+  }
+  .btn-start{background:#2f7d32;}
+  .btn-pause{background:#e67e22;}
+  .btn-reset{background:#c0392b;}
+  .btn-set{background:#1a73e8;}
+
+  .notes-area{
+    width:100%;min-height:140px;padding:12px;border:1px solid #d8c79a;
+    border-radius:8px;font-size:14px;font-family:inherit;resize:vertical;
+    background:#fff;color:var(--text-dark);
+  }
+  .notes-save{
+    margin-top:10px;background:linear-gradient(135deg,#2f7d32,#66bb6a);
+    color:#fff;border:none;padding:11px;border-radius:8px;width:100%;
+    font-weight:700;font-size:15px;cursor:pointer;
+  }
+
+  /* Quiz */
+  .quiz-card{
+    background:#fff;border-radius:10px;padding:15px;margin-bottom:11px;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);cursor:pointer;
+  }
+  .quiz-card h3{margin:0 0 5px;font-size:15.5px;color:var(--text-dark);}
+  .quiz-card p{margin:0;font-size:13px;color:#8a7a55;}
+  .quiz-q{font-size:15.5px;font-weight:600;color:var(--text-dark);margin-bottom:13px;line-height:1.5;}
+  .quiz-opt{
+    display:block;width:100%;text-align:left;padding:11px 13px;margin-bottom:7px;
+    border:2px solid #e0d4b0;border-radius:8px;background:#fff;font-size:14px;
+    cursor:pointer;color:var(--text-dark);
+  }
+  .quiz-opt.correct{border-color:#2f7d32;background:#e8f5e9;}
+  .quiz-opt.wrong{border-color:#c62828;background:#ffebee;}
+  .quiz-opt.disabled{pointer-events:none;}
+  .quiz-score{text-align:center;padding:28px 14px;}
+  .quiz-score h2{font-size:28px;margin:0 0 7px;color:var(--text-dark);}
+
+  /* Dark mode */
+  body.dark{background:#111;}
+  body.dark #phone{background:#181818;}
+  body.dark .list-card{background:#242424;}
+  body.dark .list-row{color:#f0e6cf;border-bottom-color:#333;}
+  body.dark .list-row:active{background:#2e2e2e;}
+  body.dark #screen-standard, body.dark #screen-subjects,
+  body.dark #screen-chapters, body.dark #screen-favorites,
+  body.dark #screen-tools, body.dark #screen-notes,
+  body.dark #screen-quiz-list, body.dark #screen-quiz{background:#181818;}
+  body.dark .chap-card{background:#232323;}
+  body.dark .chap-head{color:#f0e6cf;}
+  body.dark .chap-body{background:#1c1a10;color:#c8bc98;}
+  body.dark .empty-note{color:#999;}
+  body.dark .search-bar input{background:#232323;border-color:#3d3d3d;color:#eee;}
+  body.dark .fav-row{background:#232323;}
+  body.dark .fav-title{color:#f0e6cf;}
+  body.dark .fav-sub{color:#a89a6f;}
+  body.dark .prog-track{background:#333;}
+  body.dark .subj-add{border-color:#c99a2e;color:#e0b955;}
+  body.dark .tool-card{background:#232323;}
+  body.dark .tool-card h3{color:#f0e6cf;}
+  body.dark .timer-display{color:#f0e6cf;}
+  body.dark .notes-area{background:#2a2a2a;border-color:#444;color:#eee;}
+  body.dark .quiz-card{background:#232323;}
+  body.dark .quiz-card h3{color:#f0e6cf;}
+  body.dark .quiz-q{color:#f0e6cf;}
+  body.dark .quiz-opt{background:#2a2a2a;border-color:#444;color:#eee;}
+  body.dark .motivation-box{background:linear-gradient(135deg,#2a2418,#3a3018);border-left-color:#e0a800;}
+  body.dark .motivation-box .quote{color:#f0e6cf;}
+  body.dark .motivation-box .label{color:#e0b955;}
+  body.dark .motivation-box .author{color:#c9a86a;}
+
+  /* Floating tools button */
+  .fab{
+    position:fixed;bottom:22px;right:18px;width:54px;height:54px;
+    border-radius:50%;background:linear-gradient(135deg,#f7b733,#e67e22);
+    color:#fff;font-size:24px;border:none;box-shadow:0 4px 16px rgba(0,0,0,.35);
+    cursor:pointer;z-index:30;display:flex;align-items:center;justify-content:center;
+  }
+  .fab:active{transform:scale(.94);}
+
+  /* Watermark */
+  .wm-footer{
+    position:fixed;
+    bottom:6px;
+    left:0;
+    right:0;
+    text-align:center;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:0.8px;
+    color:rgba(140,90,28,0.45);
+    pointer-events:none;
+    z-index:25;
+    user-select:none;
+    font-family:'Segoe UI',system-ui,sans-serif;
+  }
+  body.dark .wm-footer{
+    color:rgba(224,184,85,0.35);
+  }
+
+  /* ===== NEW: Stats / Streak / Achievements ===== */
+
+  .stats-row{
+    display:flex;gap:8px;margin-bottom:14px;
+  }
+  .stat-card{
+    flex:1;background:rgba(255,255,255,.15);border-radius:12px;
+    padding:12px 8px;text-align:center;color:#fff;
+  }
+  .stat-card .num{font-size:22px;font-weight:800;line-height:1.1;}
+  .stat-card .lbl{font-size:11px;opacity:.85;margin-top:3px;}
+  .stat-card.fire .num{color:#ffd54f;}
+
+  .ach-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .ach-card{
+    background:#fff;border-radius:12px;padding:14px 12px;text-align:center;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);position:relative;overflow:hidden;
+  }
+  .ach-card.locked{opacity:.45;filter:grayscale(.7);}
+  .ach-card .ach-icon{font-size:28px;margin-bottom:6px;}
+  .ach-card .ach-title{font-size:13px;font-weight:700;color:var(--text-dark);}
+  .ach-card .ach-desc{font-size:11px;color:#8a7a55;margin-top:3px;}
+  .ach-card.unlocked::after{
+    content:'✓';position:absolute;top:6px;right:8px;color:#2f7d32;font-weight:800;
+  }
+
+  /* Flashcards */
+  .flash-card{
+    background:linear-gradient(145deg,#fff,#f8f0d8);
+    border-radius:16px;padding:28px 20px;min-height:180px;
+    box-shadow:0 6px 20px rgba(0,0,0,.15);text-align:center;
+    display:flex;flex-direction:column;justify-content:center;
+    cursor:pointer;transition:transform .2s;margin-bottom:14px;
+    border:2px solid #e0c878;
+  }
+  .flash-card:active{transform:scale(.98);}
+  .flash-card .f-q{font-size:17px;font-weight:700;color:var(--text-dark);line-height:1.5;}
+  .flash-card .f-a{font-size:16px;color:#2f7d32;font-weight:600;margin-top:12px;display:none;}
+  .flash-card.show-ans .f-a{display:block;}
+  .flash-card.show-ans .f-q{font-size:14px;opacity:.7;}
+  .flash-nav{display:flex;gap:10px;justify-content:center;margin-top:8px;}
+  .flash-nav button{
+    padding:10px 18px;border:none;border-radius:8px;font-weight:700;
+    font-size:14px;cursor:pointer;color:#fff;
+  }
+  .btn-prev{background:#6a6a6a;}
+  .btn-next{background:#2f7d32;}
+  .btn-flip{background:#1a73e8;}
+
+  /* Session log */
+  .session-item{
+    background:#fff;border-radius:10px;padding:12px 14px;margin-bottom:8px;
+    display:flex;justify-content:space-between;align-items:center;
+    box-shadow:0 2px 6px rgba(0,0,0,.08);
+  }
+  .session-item .s-time{font-weight:700;color:var(--text-dark);font-size:15px;}
+  .session-item .s-date{font-size:12px;color:#8a7a55;}
+
+  body.dark .ach-card{background:#232323;}
+  body.dark .ach-card .ach-title{color:#f0e6cf;}
+  body.dark .ach-card .ach-desc{color:#a89a6f;}
+  body.dark .flash-card{background:linear-gradient(145deg,#2a2418,#3a3018);border-color:#c9a227;}
+  body.dark .flash-card .f-q{color:#f0e6cf;}
+  body.dark .session-item{background:#232323;}
+  body.dark .session-item .s-time{color:#f0e6cf;}
+  body.dark .session-item .s-date{color:#a89a6f;}
+  body.dark #flashSubject{background:#2a2a2a;border-color:#444;color:#eee;}
+  body.dark #screen-achievements, body.dark #screen-flash, body.dark #screen-stats{background:#181818;}
+  body.dark .tool-card h3{color:#f0e6cf;}
+
+  /* ===== AI Study Robot ===== */
+  .fab-robot{
+    position:fixed;bottom:88px;right:18px;width:52px;height:52px;
+    border-radius:50%;background:linear-gradient(135deg,#1a73e8,#4285f4);
+    color:#fff;font-size:26px;border:none;box-shadow:0 4px 16px rgba(26,115,232,.4);
+    cursor:pointer;z-index:31;display:flex;align-items:center;justify-content:center;
+    transition:transform .15s;
+  }
+  .fab-robot:active{transform:scale(.94);}
+  .fab-robot.pulse{animation:robotPulse 1.8s ease-in-out infinite;}
+  @keyframes robotPulse{
+    0%,100%{box-shadow:0 4px 16px rgba(26,115,232,.4);}
+    50%{box-shadow:0 4px 22px rgba(26,115,232,.7),0 0 0 8px rgba(26,115,232,.15);}
+  }
+  #chatPanel{
+    display:none;position:fixed;bottom:0;left:50%;transform:translateX(-50%);
+    width:100%;max-width:430px;height:58vh;max-height:480px;
+    background:#fff;border-radius:18px 18px 0 0;z-index:40;
+    box-shadow:0 -8px 30px rgba(0,0,0,.25);flex-direction:column;
+    overflow:hidden;
+  }
+  #chatPanel.open{display:flex;}
+  body.dark #chatPanel{background:#1e1e1e;}
+  .chat-header{
+    background:linear-gradient(135deg,#1a73e8,#4285f4);color:#fff;
+    padding:12px 14px;display:flex;align-items:center;gap:10px;flex-shrink:0;
+  }
+  .chat-header .bot-avatar{font-size:28px;line-height:1;}
+  .chat-header .bot-info{flex:1;}
+  .chat-header .bot-name{font-weight:700;font-size:15px;}
+  .chat-header .bot-status{font-size:11px;opacity:.9;}
+  .chat-header .chat-close{
+    background:rgba(255,255,255,.2);border:none;color:#fff;width:32px;height:32px;
+    border-radius:50%;font-size:18px;cursor:pointer;line-height:1;
+  }
+  #chatMessages{
+    flex:1;overflow-y:auto;padding:14px 12px;display:flex;flex-direction:column;gap:10px;
+  }
+  .chat-msg{
+    max-width:88%;padding:10px 13px;border-radius:14px;font-size:13.5px;line-height:1.5;
+    word-wrap:break-word;white-space:pre-line;
+  }
+  .chat-msg.bot{
+    background:#e8f0fe;color:#1a3a6b;align-self:flex-start;
+    border-bottom-left-radius:4px;
+  }
+  .chat-msg.user{
+    background:linear-gradient(135deg,#1a73e8,#4285f4);color:#fff;align-self:flex-end;
+    border-bottom-right-radius:4px;
+  }
+  body.dark .chat-msg.bot{background:#2a3548;color:#c5d4f0;}
+  .chat-quick{
+    display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px;flex-shrink:0;
+  }
+  .chat-quick button{
+    background:#e8f0fe;border:1px solid #c5d4f0;color:#1a73e8;
+    padding:6px 11px;border-radius:16px;font-size:12px;font-weight:600;cursor:pointer;
+  }
+  body.dark .chat-quick button{background:#2a3548;border-color:#3d4f6f;color:#8ab4f8;}
+  .chat-input-row{
+    display:flex;gap:8px;padding:10px 12px 14px;border-top:1px solid #e8e0d0;flex-shrink:0;
+  }
+  body.dark .chat-input-row{border-top-color:#333;}
+  #chatInput{
+    flex:1;padding:11px 14px;border:1px solid #d0d7e2;border-radius:22px;
+    font-size:14px;outline:none;font-family:inherit;background:#f7f9fc;
+  }
+  body.dark #chatInput{background:#2a2a2a;border-color:#444;color:#eee;}
+  #chatSend{
+    width:44px;height:44px;border-radius:50%;border:none;
+    background:linear-gradient(135deg,#1a73e8,#4285f4);color:#fff;font-size:18px;
+    cursor:pointer;flex-shrink:0;
+  }
+  .chat-typing{font-size:12px;color:#8a7a55;padding:0 4px;align-self:flex-start;}
+
+  /* ===== Login ===== */
+  #loginOverlay{
+    position:fixed;inset:0;z-index:100;background:linear-gradient(160deg,#5c3f16,#7a561f 40%,#3d2a10);
+    display:flex;align-items:center;justify-content:center;padding:20px;
+  }
+  #loginOverlay.hidden{display:none;}
+  .login-card{
+    background:#fff;border-radius:18px;padding:28px 22px;width:100%;max-width:360px;
+    box-shadow:0 12px 40px rgba(0,0,0,.35);text-align:center;
+  }
+  body.dark .login-card{background:#232323;}
+  .login-logo{font-size:42px;margin-bottom:6px;}
+  .login-title{font-size:20px;font-weight:800;color:var(--text-dark);margin:0 0 4px;}
+  body.dark .login-title{color:#f0e6cf;}
+  .login-sub{font-size:13px;color:#8a7a55;margin:0 0 18px;}
+  .login-card input{
+    width:100%;padding:12px 14px;border:1px solid #d8c79a;border-radius:10px;
+    font-size:14px;margin-bottom:10px;font-family:inherit;background:#faf6eb;
+  }
+  body.dark .login-card input{background:#2a2a2a;border-color:#444;color:#eee;}
+  .login-btn{
+    width:100%;padding:13px;border:none;border-radius:10px;font-weight:700;font-size:15px;
+    cursor:pointer;margin-top:4px;color:#fff;
+  }
+  .login-btn.gmail{background:linear-gradient(135deg,#ea4335,#d93025);display:flex;align-items:center;justify-content:center;gap:8px;}
+  .login-btn.guest{background:#5c3f16;margin-top:8px;}
+  .login-err{font-size:12px;color:#c62828;margin:6px 0 0;min-height:16px;}
+  .user-chip{
+    display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);
+    border-radius:20px;padding:4px 10px 4px 4px;color:#fff;font-size:12px;font-weight:600;
+  }
+  .user-chip .av{
+    width:26px;height:26px;border-radius:50%;background:#e3a934;color:#241a0c;
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;
+  }
+  .user-chip button{
+    background:none;border:none;color:#fff;font-size:14px;cursor:pointer;padding:0 2px;opacity:.85;
+  }
+  .guest-badge{
+    font-size:11px;background:#e67e22;color:#fff;padding:2px 8px;border-radius:10px;
+    margin-left:4px;font-weight:700;
+  }
+  .lock-note{
+    background:#fff3e0;border:1px solid #ffb74d;border-radius:8px;padding:10px 12px;
+    font-size:13px;color:#e65100;margin-top:8px;text-align:center;
+  }
+  body.dark .lock-note{background:#3a2a18;border-color:#c47a20;color:#ffb74d;}
+  .admin-row{
+    display:flex;justify-content:space-between;align-items:center;padding:10px 0;
+    border-bottom:1px solid #eee2c9;font-size:14px;
+  }
+  body.dark .admin-row{border-bottom-color:#333;color:#f0e6cf;}
+  .admin-row input[type=number]{
+    width:60px;padding:6px;border-radius:6px;border:1px solid #d8c79a;text-align:center;
+  }
+  body.dark .admin-row input{background:#2a2a2a;border-color:#444;color:#eee;}
+  .login-admin-link{
+    display:block;margin-top:12px;font-size:12px;color:#8a7a55;text-decoration:underline;cursor:pointer;background:none;border:none;
+  }
+
+  /* ===== WhatsApp Channel Popup ===== */
+  #waChannelModal{
+    position:fixed;inset:0;z-index:150;background:rgba(0,0,0,.6);
+    display:flex;align-items:center;justify-content:center;padding:20px;
+  }
+  #waChannelModal.hidden{display:none;}
+  .wa-modal-card{
+    background:#fff;border-radius:18px;padding:26px 22px;width:100%;max-width:340px;
+    box-shadow:0 12px 40px rgba(0,0,0,.35);text-align:center;position:relative;
+  }
+  body.dark .wa-modal-card{background:#232323;}
+  .wa-modal-close{
+    position:absolute;top:8px;right:10px;background:none;border:none;font-size:20px;
+    cursor:pointer;color:#999;line-height:1;padding:4px;
+  }
+  .wa-modal-icon{font-size:44px;margin-bottom:8px;}
+  .wa-modal-title{font-size:17px;font-weight:800;color:var(--text-dark);margin:0 0 6px;}
+  body.dark .wa-modal-title{color:#f0e6cf;}
+  .wa-modal-sub{font-size:13px;color:#8a7a55;margin:0 0 18px;line-height:1.5;}
+  .wa-modal-btn{
+    display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px;border:none;
+    border-radius:10px;font-weight:700;font-size:15px;cursor:pointer;color:#fff;
+    background:linear-gradient(135deg,#25d366,#128c3e);text-decoration:none;box-sizing:border-box;
+  }
+  .wa-modal-later{
+    display:block;width:100%;margin-top:12px;font-size:12px;color:#8a7a55;text-decoration:underline;
+    cursor:pointer;background:none;border:none;
+  }
+</style>
+
+
+</head>
+<body>
+
+<!-- LOGIN OVERLAY -->
+<div id="loginOverlay">
+  <div class="login-card">
+    <div class="login-logo">📚</div>
+    <h2 class="login-title">College Mitra Login</h2>
+    <p class="login-sub">Gmail થી લૉગિન કરો અને અભ્યાસ શરૂ કરો</p>
+    <input type="text" id="loginName" placeholder="તમારું નામ" maxlength="40" autocomplete="name">
+    <input type="email" id="loginEmail" placeholder="Gmail (example@gmail.com)" maxlength="60" autocomplete="email">
+    <button class="login-btn gmail" onclick="doLogin()">
+      <span>📧</span> Gmail થી લૉગિન
+    </button>
+    <button class="login-btn guest" onclick="doGuestLogin()">👤 Guest તરીકે ચાલુ રાખો (માત્ર 2 PDF)</button>
+    <button type="button" class="login-admin-link" onclick="promptAdminLogin()">🔐 Admin Panel</button>
+    <div class="login-err" id="loginErr"></div>
+  </div>
+</div>
+
+<!-- WHATSAPP CHANNEL POPUP -->
+<div id="waChannelModal" class="hidden">
+  <div class="wa-modal-card">
+    <button class="wa-modal-close" onclick="closeWaChannelModal()">✕</button>
+    <div class="wa-modal-icon">📢</div>
+    <div class="wa-modal-title">WhatsApp Channel Join કરો!</div>
+    <p class="wa-modal-sub">Follow the <b>B.COM BY PRATHAMX</b> channel on WhatsApp — નવા Updates, Notes અને Notices સૌથી પહેલા મેળવો! 🔔</p>
+    <a class="wa-modal-btn" href="https://whatsapp.com/channel/0029Vb8q9ylHVvTbIMkMzO1n" target="_blank" onclick="closeWaChannelModal()">📲 Channel Join કરો</a>
+    <button class="wa-modal-later" onclick="closeWaChannelModal()">પછી કરીશ</button>
+  </div>
+</div>
+
+<div id="phone">
+
+  <!-- HOME -->
+  <div id="screen-home">
+    <div class="home-topbar">
+      <div class="title">B.Com પસંદ કરો</div>
+      <div class="icon-btns">
+        <div class="user-chip" id="userChip" style="display:none;">
+          <span class="av" id="userAv">?</span>
+          <span id="userNameShort"></span>
+          <button onclick="doLogout()" title="Logout">⎋</button>
+        </div>
+        <button id="adminBtn" onclick="openAdminPanel()" title="Admin" style="display:none;background:rgba(255,255,255,.18);border:none;color:#fff;width:34px;height:34px;border-radius:50%;font-size:14px;cursor:pointer;">🔐</button>
+        <button id="darkBtn" onclick="toggleDark()" title="Dark mode">🌙</button>
+        <button onclick="openFavorites()" title="મનપસંદ">★</button>
+        <button onclick="openTools()" title="Tools">⏱</button>
+      </div>
+    </div>
+
+    <!-- NOTICE BOARD (Admin controlled) -->
+    <div class="motivation-box" id="noticeBox" style="display:none;border-left-color:#c0392b;">
+      <div class="label">📢 સૂચના</div>
+      <p class="quote" id="noticeText" style="font-size:14px;"></p>
+    </div>
+
+    <!-- EXAM COUNTDOWN (Admin controlled) -->
+    <div class="daily-goal" id="examCountdownBox" style="display:none;">
+      <div class="goal-title">📅 પરીક્ષા સુધી બાકી</div>
+      <div class="goal-status" id="examCountdownText" style="font-size:16px;font-weight:700;margin-top:0;"></div>
+    </div>
+
+    <!-- MOTIVATION -->
+    <div class="motivation-box" id="motivationBox">
+      <button class="refresh" onclick="nextMotivation()" title="નવી મોટિવેશન">🔄</button>
+      <div class="label">🔥 આજની મોટિવેશન</div>
+      <p class="quote" id="motiQuote">સખ્ત મહેનત કરો... સફળતા તમારી જ છે!</p>
+      <div class="author" id="motiAuthor">— તમારો અભ્યાસ મિત્ર</div>
+    </div>
+
+    <!-- Stats Row: Streak + Focus Time + Sessions -->
+    <div class="stats-row" id="statsRow">
+      <div class="stat-card fire">
+        <div class="num" id="streakNum">0🔥</div>
+        <div class="lbl">સ્ટ્રીક દિવસ</div>
+      </div>
+      <div class="stat-card">
+        <div class="num" id="focusNum">0</div>
+        <div class="lbl">આજે મિનિટ</div>
+      </div>
+      <div class="stat-card">
+        <div class="num" id="sessionNum">0</div>
+        <div class="lbl">સેશન આજે</div>
+      </div>
+
+    </div>
+
+    <!-- Daily Goal -->
+    <div class="daily-goal">
+      <div class="goal-title">🎯 આજનો લક્ષ્ય (પ્રકરણો)</div>
+      <div class="goal-row">
+        <input type="number" id="goalInput" min="1" max="20" value="3">
+        <button class="goal-btn" onclick="setDailyGoal()">સેટ કરો</button>
+        <span id="goalDone" style="font-size:13px;opacity:.9;"></span>
+      </div>
+      <div class="goal-status" id="goalStatus">આજે 0 પ્રકરણ પૂર્ણ • લક્ષ્ય 3</div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div style="display:flex;gap:8px;margin-bottom:14px;">
+      <button class="goal-btn" style="flex:1;background:linear-gradient(135deg,#1a73e8,#4285f4);" onclick="openFlashcards()">🃏 ફ્લેશકાર્ડ</button>
+      <button class="goal-btn" style="flex:1;background:linear-gradient(135deg,#8e24aa,#ab47bc);" onclick="openAchievements()">🏆 બેજ</button>
+      <button class="goal-btn" style="flex:1;background:linear-gradient(135deg,#e67e22,#f39c12);" onclick="openStats()">📊 સ્ટેટ્સ</button>
+    </div>
+
+    <div class="search-bar">
+      <input id="homeSearch" placeholder="વિષય શોધો (GST, Accounting...)" oninput="renderHomeSearch()">
+    </div>
+    <div id="homeSearchResults" style="display:none;"></div>
+    <div class="list-card" id="standardList"></div>
+  </div>
+
+
+  <!-- STANDARD / CATEGORIES -->
+  <div id="screen-standard" style="display:none;">
+    <header>
+      <button class="back show" onclick="goHome()">←</button>
+      <h1 id="standardTitle">B.Com</h1>
+      <button onclick="toggleDark()" style="background:none;border:none;font-size:19px;cursor:pointer;">🌙</button>
+    </header>
+    <div class="content">
+      <div class="cat-grid" id="catGrid"></div>
+    </div>
+  </div>
+
+  <!-- SUBJECTS -->
+  <div id="screen-subjects" style="display:none;">
+    <header>
+      <button class="back show" onclick="goStandard()">←</button>
+      <h1 id="subjectsTitle">પાઠ્ય પુસ્તક</h1>
+      <button onclick="toggleDark()" style="background:none;border:none;font-size:19px;cursor:pointer;">🌙</button>
+    </header>
+    <div class="content">
+      <div class="subj-grid" id="subjGrid"></div>
+    </div>
+  </div>
+
+  <!-- CHAPTERS -->
+  <div id="screen-chapters" style="display:none;">
+    <header>
+      <button class="back show" onclick="goSubjects()">←</button>
+      <h1 id="chaptersTitle">પ્રકરણો</h1>
+      <button onclick="toggleDark()" style="background:none;border:none;font-size:19px;cursor:pointer;">🌙</button>
+    </header>
+    <div class="content">
+      <div id="videoLinkBox" style="margin-bottom:10px;"></div>
+      <div class="chap-progress" id="chapProgress"></div>
+      <div class="search-bar"><input id="chapSearch" placeholder="પ્રકરણ શોધો..." oninput="renderChapters()"></div>
+      <div id="chapList"></div>
+    </div>
+  </div>
+
+  <!-- PREVIOUS PAPERS -->
+  <div id="screen-prevpapers" style="display:none;">
+    <header>
+      <button class="back show" onclick="goStandard()">←</button>
+      <h1 id="prevPapersTitle">જૂના પેપર્સ</h1>
+      <button onclick="toggleDark()" style="background:none;border:none;font-size:19px;cursor:pointer;">🌙</button>
+    </header>
+    <div class="content">
+      <div class="subj-grid" id="prevPapersGrid"></div>
+    </div>
+  </div>
+
+  <!-- FAVORITES -->
+  <div id="screen-favorites" style="display:none;">
+    <header>
+      <button class="back show" onclick="goHome()">←</button>
+      <h1>★ મનપસંદ પ્રકરણો</h1>
+      <button onclick="toggleDark()" style="background:none;border:none;font-size:19px;cursor:pointer;">🌙</button>
+    </header>
+    <div class="content" id="favList"></div>
+  </div>
+
+  <!-- TOOLS (Timer + Notes) -->
+  <div id="screen-tools" style="display:none;">
+    <header>
+      <button class="back show" onclick="goHome()">←</button>
+      <h1>⏱ અભ્યાસ Tools</h1>
+      <button onclick="toggleDark()" style="background:none;border:none;font-size:19px;cursor:pointer;">🌙</button>
+    </header>
+    <div class="content">
+      <!-- Pomodoro -->
+      <div class="tool-card">
+        <h3>⏱ ફોકસ ટાઈમર (Pomodoro)</h3>
+        <div class="timer-display" id="timerDisplay">25:00</div>
+        <div class="timer-btns">
+          <button class="btn-start" onclick="startTimer()">▶ શરૂ</button>
+          <button class="btn-pause" onclick="pauseTimer()">⏸ પોઝ</button>
+          <button class="btn-reset" onclick="resetTimer()">↺ રીસેટ</button>
+        </div>
+        <div class="timer-btns" style="margin-top:10px;">
+          <button class="btn-set" onclick="setTimer(25)">25 મિન</button>
+          <button class="btn-set" onclick="setTimer(45)">45 મિન</button>
+          <button class="btn-set" onclick="setTimer(60)">60 મિન</button>
+        </div>
+        <p style="font-size:12px;color:#8a7a55;margin:12px 0 0;text-align:center;">
+          25 મિનિટ ફોકસ → 5 મિનિટ બ્રેક. આ રીતે મગજ તાજું રહે છે!
+        </p>
+      </div>
+
+      <!-- Quick Tips -->
+      <div class="tool-card">
+        <h3>💡 અભ્યાસના સરળ નિયમો</h3>
+        <ul style="margin:0;padding-left:18px;font-size:14px;line-height:1.7;color:#5a4a2c;">
+          <li>એક સમયે એક જ વિષય પર ફોકસ કરો</li>
+          <li>સમજીને લખો — યાદ રાખવા નહીં</li>
+          <li>રોજ થોડું કરો, એક દિવસમાં બધું નહીં</li>
+          <li>મુશ્કેલ પ્રકરણ સવારે કરો</li>
+          <li>પોતાને પ્રશ્ન પૂછો: “આ શું છે?”</li>
+        </ul>
+      </div>
+
+      <button class="pdf-btn" onclick="openNotes()" style="margin-top:4px;">📝 મારી નોંધો ખોલો</button>
+      <input type="file" id="importFileInput" accept=".json,application/json" style="display:none;" onchange="importSharedDataFile(event)">
+      <button class="pdf-btn" style="background:linear-gradient(135deg,#1a73e8,#4285f4);margin-top:8px;" onclick="document.getElementById('importFileInput').click()">📥 Friend ની Data ફાઈલ Import કરો</button>
+    </div>
+  </div>
+
+  <!-- NOTES -->
+  <div id="screen-notes" style="display:none;">
+    <header>
+      <button class="back show" onclick="openTools()">←</button>
+      <h1>📝 મારી નોંધો</h1>
+      <button onclick="toggleDark()" style="background:none;border:none;font-size:19px;cursor:pointer;">🌙</button>
+    </header>
+    <div class="content">
+      <div class="tool-card">
+        <h3>કોઈ પણ વિષયની નોંધ લખો</h3>
+        <textarea class="notes-area" id="notesArea" placeholder="અહીં તમારી નોંધ લખો... (આપમેળે સેવ થશે)"></textarea>
+        <button class="notes-save" onclick="saveNotes()">💾 સેવ કરો</button>
+        <button class="notes-save" style="background:linear-gradient(135deg,#1a73e8,#4285f4);margin-top:8px;" onclick="speakNotes()">🔊 મોટેથી વાંચો</button>
+        <button class="notes-save" style="background:linear-gradient(135deg,#767676,#999);margin-top:8px;" onclick="stopSpeak()">⏹ બંધ કરો</button>
+        <p style="font-size:12px;color:#8a7a55;margin:8px 0 0;text-align:center;" id="notesSavedMsg"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PDF -->
+  <div id="screen-pdf">
+    <div id="pdfToolbar">
+      <button onclick="closePdf()">← બંધ</button>
+      <button onclick="pdfZoomOut()" title="નાનું ફોન્ટ">A-</button>
+      <button onclick="pdfZoomIn()" title="મોટું ફોન્ટ">A+</button>
+      <span id="pdfPageInfo" style="flex:1;text-align:center;color:#ccc;font-size:13px;">PDF</span>
+      <button onclick="togglePdfBookmark()" id="pdfBookmarkBtn" title="બુકમાર્ક">🔖</button>
+      <button onclick="openPdfExternal()" title="નવી ટેબ">↗</button>
+    </div>
+    <div id="pdfCanvasWrap">
+      <iframe id="pdfIframe" style="width:100%;height:100%;border:none;background:#111;"></iframe>
+    </div>
+  </div>
+
+  <!-- QUIZ LIST -->
+  <div id="screen-quiz-list" style="display:none;">
+    <header>
+      <button class="back show" onclick="goStandard()">←</button>
+      <h1 id="quizListTitle">MCQ Quiz</h1>
+      <button onclick="toggleDark()" style="background:none;border:none;font-size:19px;cursor:pointer;">🌙</button>
+    </header>
+    <div class="content" id="quizList" style="padding:16px 12px 40px;"></div>
+  </div>
+
+  <!-- QUIZ -->
+  <div id="screen-quiz" style="display:none;">
+    <header>
+      <button class="back show" onclick="showScreen('screen-quiz-list')">←</button>
+      <h1 id="quizTitle">Quiz</h1>
+      <button onclick="toggleDark()" style="background:none;border:none;font-size:19px;cursor:pointer;">🌙</button>
+    </header>
+    <div class="content" style="padding:16px 12px 40px;">
+      <div id="quizProgress" style="font-size:13px;color:#8a7a55;margin-bottom:11px;font-weight:600;"></div>
+      <div id="quizBody"></div>
+    </div>
+  </div>
+
+  <!-- ACHIEVEMENTS -->
+  <div id="screen-achievements" style="display:none;">
+    <header>
+      <button class="back show" onclick="goHome()">←</button>
+      <h1>🏆 અચીવમેન્ટ્સ</h1>
+      <button onclick="toggleDark()" style="background:none;border:none;font-size:19px;cursor:pointer;">🌙</button>
+    </header>
+    <div class="content" style="padding:16px 12px 40px;">
+      <p style="font-size:13px;color:#8a7a55;margin:0 0 14px;text-align:center;">બેજ અનલોક કરો અને પ્રેરણા મેળવો!</p>
+      <div class="ach-grid" id="achGrid"></div>
+    </div>
+  </div>
+
+  <!-- FLASHCARDS -->
+  <div id="screen-flash" style="display:none;">
+    <header>
+      <button class="back show" onclick="goHome()">←</button>
+      <h1>🃏 ફ્લેશકાર્ડ્સ</h1>
+      <button onclick="toggleDark()" style="background:none;border:none;font-size:19px;cursor:pointer;">🌙</button>
+    </header>
+    <div class="content" style="padding:16px 12px 40px;">
+      <div style="margin-bottom:12px;">
+        <select id="flashSubject" onchange="loadFlashcards()" style="width:100%;padding:10px;border-radius:8px;border:1px solid #d8c79a;font-size:14px;background:#fff;">
+          <option value="Corporate Accounting">Corporate Accounting</option>
+          <option value="Cost Accounting">Cost Accounting</option>
+          <option value="Economics">Economics</option>
+          <option value="Taxation">Taxation / GST</option>
+          <option value="General">General Study Tips</option>
+        </select>
+      </div>
+      <div id="flashProgress" style="font-size:13px;color:#8a7a55;margin-bottom:10px;font-weight:600;text-align:center;"></div>
+      <div class="flash-card" id="flashCard" onclick="flipFlash()">
+        <div class="f-q" id="flashQ">કાર્ડ લોડ થઈ રહ્યું છે...</div>
+        <div class="f-a" id="flashA"></div>
+      </div>
+      <div class="flash-nav">
+        <button class="btn-prev" onclick="prevFlash()">← પહેલું</button>
+        <button class="btn-flip" onclick="flipFlash()">🔄 ફ્લિપ</button>
+        <button class="btn-next" onclick="nextFlash()">આગળ →</button>
+      </div>
+      <p style="font-size:12px;color:#8a7a55;text-align:center;margin-top:14px;">કાર્ડ પર ટેપ કરો અથવા ફ્લિપ બટન દબાવો</p>
+    </div>
+  </div>
+
+  <!-- STATS / HISTORY -->
+  <div id="screen-stats" style="display:none;">
+    <header>
+      <button class="back show" onclick="goHome()">←</button>
+      <h1>📊 અભ્યાસ સ્ટેટ્સ</h1>
+      <button onclick="toggleDark()" style="background:none;border:none;font-size:19px;cursor:pointer;">🌙</button>
+    </header>
+    <div class="content" style="padding:16px 12px 40px;">
+      <div class="tool-card">
+        <h3>🔥 સ્ટ્રીક & ફોકસ</h3>
+        <div style="display:flex;justify-content:space-around;text-align:center;margin:12px 0;">
+          <div><div style="font-size:28px;font-weight:800;" id="statsStreak">0</div><div style="font-size:12px;color:#8a7a55;">દિવસ સ્ટ્રીક</div></div>
+          <div><div style="font-size:28px;font-weight:800;" id="statsTotalMin">0</div><div style="font-size:12px;color:#8a7a55;">કુલ મિનિટ</div></div>
+          <div><div style="font-size:28px;font-weight:800;" id="statsBest">0</div><div style="font-size:12px;color:#8a7a55;">શ્રેષ્ઠ સ્ટ્રીક</div></div>
+        </div>
+      </div>
+      <div class="tool-card">
+        <h3>⏱ આજના સેશન્સ</h3>
+        <div id="todaySessions"><div class="empty-note">આજે હજુ કોઈ સેશન નથી. ટાઈમર શરૂ કરો!</div></div>
+      </div>
+      <div class="tool-card">
+        <h3>📅 છેલ્લા 7 દિવસ</h3>
+        <div id="weekLog"></div>
+      </div>
+      <button class="pdf-btn" style="background:linear-gradient(135deg,#25d366,#128c3e);" onclick="shareStatsWhatsApp()">📤 WhatsApp પર શેર કરો</button>
+      <button class="pdf-btn" style="background:linear-gradient(135deg,#c0392b,#e74c3c);" onclick="resetStats()">↺ સ્ટેટ્સ રીસેટ (સાવધાન)</button>
+    </div>
+  </div>
+
+  <!-- ADMIN PANEL -->
+  <div id="screen-admin" style="display:none;">
+    <header>
+      <button class="back show" onclick="goHome()">←</button>
+      <h1>🔐 Admin Panel</h1>
+      <button onclick="toggleDark()" style="background:none;border:none;font-size:19px;cursor:pointer;">🌙</button>
+    </header>
+    <div class="content" style="padding:16px 12px 40px;">
+      <div class="tool-card">
+        <h3>👤 વર્તમાન યુઝર</h3>
+        <div id="adminUserInfo" style="font-size:14px;line-height:1.6;"></div>
+      </div>
+      <div class="tool-card">
+        <h3>📄 Guest PDF મર્યાદા</h3>
+        <div class="admin-row">
+          <span>Guest ને કેટલી PDF ખોલી શકે</span>
+          <input type="number" id="adminGuestLimit" min="0" max="50" value="2">
+        </div>
+        <div class="admin-row">
+          <span>આ ડિવાઇસ પર Guest PDF ખોલી</span>
+          <strong id="adminGuestUsed">0</strong>
+        </div>
+        <button class="pdf-btn" style="margin-top:10px;" onclick="saveAdminSettings()">💾 સેટિંગ્સ સેવ</button>
+        <button class="pdf-btn" style="margin-top:8px;background:linear-gradient(135deg,#e67e22,#f39c12);" onclick="resetGuestQuota()">↺ Guest ક્વોટા રીસેટ</button>
+      </div>
+      <div class="tool-card">
+        <h3>📢 સૂચના બોર્ડ (બધા યુઝરને Home પર દેખાશે)</h3>
+        <textarea class="notes-area" id="adminNoticeInput" placeholder="દા.ત. 'નવું PDF ઉમેરાયું છે' અથવા 'રજા છે'" style="min-height:70px;"></textarea>
+        <button class="pdf-btn" style="margin-top:10px;" onclick="saveAdminNotice()">💾 સૂચના સેવ કરો</button>
+        <button class="pdf-btn" style="margin-top:8px;background:linear-gradient(135deg,#767676,#999);" onclick="clearAdminNotice()">🗑 સૂચના હટાવો</button>
+      </div>
+      <div class="tool-card">
+        <h3>📅 પરીક્ષા તારીખ (Countdown)</h3>
+        <div class="admin-row">
+          <span>પરીક્ષાની તારીખ</span>
+          <input type="date" id="adminExamDate">
+        </div>
+        <button class="pdf-btn" style="margin-top:10px;" onclick="saveAdminExamDate()">💾 તારીખ સેવ કરો</button>
+        <button class="pdf-btn" style="margin-top:8px;background:linear-gradient(135deg,#767676,#999);" onclick="clearAdminExamDate()">🗑 Countdown હટાવો</button>
+      </div>
+      <div class="tool-card">
+        <h3>📤 Data Export (Friends ko bhejva mate)</h3>
+        <p style="font-size:12px;color:#8a7a55;margin:0 0 8px;">Notice, Exam Date, Subjects, Video Links, જૂના પેપર્સ — બધું એક JSON ફાઈલમાં. આ ફાઈલ WhatsApp પર friends ને મોકલો, એ Tools → Import કરશે.</p>
+        <button class="pdf-btn" onclick="exportSharedData()">📤 Data Export કરો</button>
+      </div>
+      <div class="tool-card">
+        <h3>ℹ️ નિયમો</h3>
+        <ul style="margin:0;padding-left:18px;font-size:13px;line-height:1.7;color:#5a4a2c;">
+          <li><b>Guest</b> → માત્ર N PDF (default 2)</li>
+          <li><b>Gmail Login</b> → બધી PDF unlimited</li>
+          <li><b>Admin</b> → આ panel + unlimited PDF</li>
+        </ul>
+      </div>
+      <button class="pdf-btn" style="background:linear-gradient(135deg,#c0392b,#e74c3c);" onclick="adminLogout()">Admin Logout</button>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- Floating button -->
+<button class="fab" onclick="openTools()" title="Timer & Notes">⏱</button>
+
+<!-- AI Study Robot FAB -->
+<button class="fab-robot pulse" id="robotFab" onclick="toggleChat()" title="Study Robot">🤖</button>
+
+<!-- Chat Panel -->
+<div id="chatPanel">
+  <div class="chat-header">
+    <div class="bot-avatar">🤖</div>
+    <div class="bot-info">
+      <div class="bot-name">Study Robot</div>
+      <div class="bot-status">ફક્ત અભ્યાસ મદદ • Online</div>
+    </div>
+    <button class="chat-close" onclick="toggleChat()">✕</button>
+  </div>
+  <div id="chatMessages"></div>
+  <div class="chat-quick" id="chatQuick">
+    <button onclick="sendQuick('પરીક્ષા તારીખ')">📅 પરીક્ષા તારીખ</button>
+    <button onclick="sendQuick('મોટિવેશન આપો')">🔥 મોટિવેશન</button>
+    <button onclick="sendQuick('અભ્યાસ ટિપ્સ')">💡 ટિપ્સ</button>
+    <button onclick="sendQuick('GST શું છે?')">GST</button>
+    <button onclick="sendQuick('Quiz કેવી રીતે કરું?')">📝 Quiz</button>
+  </div>
+  <div class="chat-input-row">
+    <input id="chatInput" type="text" placeholder="પૂછો... (ફક્ત અભ્યાસ)" maxlength="200"
+      onkeydown="if(event.key==='Enter')sendChat()">
+    <button id="chatSend" onclick="sendChat()">➤</button>
+  </div>
+</div>
+
+<!-- Watermark -->
+<div class="wm-footer">2026@right resolved</div>
+
+<script>
+
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+/* ===== MOTIVATION QUOTES ===== */
+const MOTIVATIONS = [
+  {q:"વેલ્યુ પોઝિટિવ હોય તો સબ્સ્ટિટ્યૂટ, નેગેટિવ હોય તો કોમ્પ્લિમેન્ટરી... જીવનમાં પણ પોઝિટિવ વેલ્યુ રાખો!", a:"— સરળ સમજાવટ સ્ટાઈલ"},
+  {q:"સખ્ત મહેનત કરો. સફળતા તમારી જ છે. કોઈ બીજો તમારા માટે નહીં કરે!", a:"— તમારો અભ્યાસ મિત્ર"},
+  {q:"એક પ્રકરણ પૂરું કરો... પછી બીજું. રોજ થોડું કરો તો પરીક્ષા પહેલાં બધું પૂરું થઈ જશે.", a:"— સતત પ્રયત્ન"},
+  {q:"મુશ્કેલ લાગે તો ફરીથી વાંચો. સમજાય નહીં તો ફરીથી. આખરે સમજાઈ જ જશે!", a:"— ક્યારેય હારો નહીં"},
+  {q:"આજે 2 કલાક અભ્યાસ કરો. કાલે 2.5 કલાક. રોજ થોડું વધારો — મોટી સફળતા આવશે.", a:"— નાના પગલાં"},
+  {q:"બીજા લોકો શું કરે છે તે જોવાને બદલે તમે શું કરી રહ્યા છો તે જુઓ.", a:"— પોતા પર ફોકસ"},
+  {q:"પરીક્ષા નજીક છે એ વિચારીને ડરશો નહીં. તૈયારી કરો તો ડર ગાયબ થઈ જશે.", a:"— તૈયારી = આત્મવિશ્વાસ"},
+  {q:"ગુડ્સની જેમ જીવનમાં પણ ક્રોસ એલાસ્ટિસિટી સમજો — સાચા લોકો સાથે રહો!", a:"— ઇકોનોમિક્સ લાઈફ"},
+  {q:"આજે જે કરો છો તે કાલે તમારું ભવિષ્ય બનાવશે. આજે જ શરૂ કરો!", a:"— આજે જ"},
+  {q:"સમજીને ભણો. યાદ રાખવા માટે નહીં, સમજવા માટે ભણો. પછી યાદ પણ રહેશે.", a:"— સમજણી અભ્યાસ"},
+  {q:"થાક લાગે તો 5 મિનિટ બ્રેક લો. પછી ફરીથી લાગી જાઓ. હાર માનશો નહીં!", a:"— ટકી રહો"},
+  {q:"B.Com પાસ કરવું મુશ્કેલ નથી. રોજનું કામ રોજ કરો તો સરળ બની જાય છે.", a:"— રોજનું કામ રોજ"}
+];
+let motiIndex = Math.floor(Math.random() * MOTIVATIONS.length);
+
+function showMotivation(){
+  const m = MOTIVATIONS[motiIndex];
+  document.getElementById('motiQuote').textContent = m.q;
+  document.getElementById('motiAuthor').textContent = m.a;
+}
+function nextMotivation(){
+  motiIndex = (motiIndex + 1) % MOTIVATIONS.length;
+  showMotivation();
+}
+
+/* ===== DATA ===== */
+const CATEGORIES = [
+  {key:'textbooks',  label:'પાઠ્ય-પુસ્તકો', color:'var(--cat-books)',     icon:'book'},
+  {key:'mcq',        label:'MCQs',           color:'var(--cat-mcq)',       icon:'list'},
+  {key:'lang',       label:'ભાષા વિભાગ',     color:'var(--cat-lang)',      icon:'lang'},
+  {key:'blueprint',  label:'બ્લુપ્રિન્ટ',    color:'var(--cat-blueprint)', icon:'grid'},
+  {key:'oldpapers',  label:'જુના પેપર્સ',    color:'var(--cat-old)',       icon:'clock'},
+];
+
+const BCOM_SUBJECTS = {
+  1: ['ફાઇનાન્શિયલ એકાઉન્ટિંગ','બિઝનેસ ઇકોનોમિક્સ - I','બિઝનેસ ઓર્ગેનાઇઝેશન એન્ડ મેનેજમેન્ટ','બિઝનેસ મેથેમેટિક્સ એન્ડ સ્ટેટિસ્ટિક્સ','બિઝનેસ કમ્યુનિકેશન - I','એન્વાયર્નમેન્ટલ સ્ટડીઝ'],
+  2: ['કોર્પોરેટ એકાઉન્ટિંગ','બિઝનેસ ઇકોનોમિક્સ - II','બિઝનેસ સ્ટેટિસ્ટિક્સ','બિઝનેસ રેગ્યુલેટરી ફ્રેમવર્ક','બિઝનેસ કમ્યુનિકેશન - II','કમ્પ્યુટર એપ્લિકેશન ઇન બિઝનેસ'],
+  3: ['Corporate Accounting','Cost Accounting','Economics','English','ES','IKS','Taxation'],
+  4: ['એડવાન્સ્ડ એકાઉન્ટિંગ','ગુડ્સ એન્ડ સર્વિસીસ ટેક્સ (GST)','ફાઇનાન્શિયલ મેનેજમેન્ટ','માર્કેટિંગ મેનેજમેન્ટ','ઓડિટિંગ','એન્ટરપ્રેન્યોરશિપ ડેવલપમેન્ટ'],
+  5: ['મેનેજમેન્ટ એકાઉન્ટિંગ','કોર્પોરેટ ટેક્સ પ્લાનિંગ','ઈ-કોમર્સ','બિઝનેસ રિસર્ચ મેથડ','ફાઇનાન્શિયલ માર્કેટ્સ એન્ડ સર્વિસીસ','ઇલેક્ટિવ - I'],
+  6: ['ઓડિટિંગ એન્ડ કોર્પોરેટ ગવર્નન્સ','ઇન્ટરનેશનલ બિઝનેસ','સ્ટ્રેટેજિક મેનેજમેન્ટ','પ્રોજેક્ટ વર્ક / ડિઝર્ટેશન','કમ્પ્યુટરાઇઝ્ડ એકાઉન્ટિંગ','ઇલેક્ટિવ - II']
+};
+
+const PDF_MAP = {
+  '3|Corporate Accounting|0': 'https://drive.google.com/file/d/1GbjIprA_4XO1sOYShvrBXSsFV2zXK-Ax/preview',
+  '3|Corporate Accounting|1': 'https://drive.google.com/file/d/1Rf352qbrVOkT25wJxuO8sK6Hsa71uA6f/preview',
+  '3|Corporate Accounting|2': 'https://drive.google.com/file/d/1osxk57axKFfkzGb6USqGfe2WgAI2GCVO/preview',
+  '3|Corporate Accounting|3': 'https://drive.google.com/file/d/1MjbjJacM8BEmedt0V27KSubxOqFNd9xo/preview',
+  '3|Corporate Accounting|4': 'https://drive.google.com/file/d/1wuNdiNkbC0poRDtWNf1r59LF_jWaVEyq/preview',
+  '3|Cost Accounting|0': 'https://drive.google.com/file/d/13udix8PLN4e8e5TNXbCKNhJniuIOYCx0/preview',
+  '3|Cost Accounting|1': 'https://drive.google.com/file/d/1ZNNUPIe_uJAvSK9CGjuqiWvrfX3A8BAH/preview',
+  '3|Cost Accounting|2': 'https://drive.google.com/file/d/18mmkUuTzF47pOUxfnPul_k5p72YKEl2a/preview',
+  '3|Cost Accounting|3': 'https://drive.google.com/file/d/1hlmb_OPu2TGL00n2yRkBZu_nxLsaw0B1/preview',
+  '3|Cost Accounting|4': 'https://drive.google.com/file/d/1JzWQyj0dSvDoY0rd8QVXP6unXyg9ttW6/preview',
+  '3|Cost Accounting|5': 'https://drive.google.com/file/d/1cPy8so4qQihyjjyKdMDcXGBKTReiOAOF/preview',
+  '3|Economics|0': 'https://drive.google.com/file/d/128bNXD-62H77PkDLpJC9_tti5sNPqcpn/preview',
+  '3|Economics|1': 'https://drive.google.com/file/d/1DBUearTzrF1J7BL6nFrCI6hEy-uMfEPD/preview',
+  '3|Economics|2': 'https://drive.google.com/file/d/1M2iUyubVGIauxGhLGSdCoxtgjbfmq7ZV/preview',
+  '3|Economics|3': 'https://drive.google.com/file/d/1thei5_z3dApmLghRMkK5e7TlF5VWS8__/preview',
+  '3|English|0': 'https://drive.google.com/file/d/128bNXD-62H77PkDLpJC9_tti5sNPqcpn/preview',
+  '3|English|1': 'https://drive.google.com/file/d/1DBUearTzrF1J7BL6nFrCI6hEy-uMfEPD/preview',
+  '3|English|2': 'https://drive.google.com/file/d/1M2iUyubVGIauxGhLGSdCoxtgjbfmq7ZV/preview',
+  '3|English|3': 'https://drive.google.com/file/d/1thei5_z3dApmLghRMkK5e7TlF5VWS8__/preview',
+  /* Taxation Units 1-8 */
+  '3|Taxation|0': 'https://drive.google.com/file/d/19hDTzGUkviZDAqqygmyLS5bRrP1NpUFE/preview',
+  '3|Taxation|1': 'https://drive.google.com/file/d/1pYYVqqBPFF3DZ6RtJ9aCdkUPOKCr9EGd/preview',
+  '3|Taxation|2': 'https://drive.google.com/file/d/1bUkVBr0GM9ET5oPqbLbf9TYmcUrqxeYh/preview',
+  '3|Taxation|3': 'https://drive.google.com/file/d/13u-9tTgTRDj_bEPeyMXcU5t4QsMzmff9/preview',
+  '3|Taxation|4': 'https://drive.google.com/file/d/1zUTZW-kCirVaVfIkN2PYU1GSEawVTPRs/preview',
+  '3|Taxation|5': 'https://drive.google.com/file/d/1hE5SsgATYhip_4vCXMLqa1HR2KqdakJy/preview',
+  '3|Taxation|6': 'https://drive.google.com/file/d/1t7PbB6lSuoHhg58Gm2LNO-lrNXZi8cDP/preview',
+  '3|Taxation|7': 'https://drive.google.com/file/d/1LPQT3Gvhz0sVgVX9EpaLRS51JSPTPVl4/preview',
+  /* IKS Units 1-2 */
+  '3|IKS|0': 'https://drive.google.com/file/d/1qWO1PFxjRZ23rPlSmaNqb_QwdQUNXyFd/preview',
+  '3|IKS|1': 'https://drive.google.com/file/d/1sTqHxPqc3DhXjQdZ_ndTp260Nj9vThZx/preview',
+  /* ES Units 1-2 */
+  '3|ES|0': 'https://drive.google.com/file/d/1o-7hT7LIeAbG_poacWmRCd3MDAjd98jE/preview',
+  '3|ES|1': 'https://drive.google.com/file/d/1gLtUquYUC3-kShx3NslydndM-ro-Rf5x/preview'
+};
+
+const FOLDER_MAP = {
+  /* Taxation, IKS, ES ab unit-wise PDF_MAP me hain */
+};
+
+const CHAPTER_TITLES = {
+  '3|Corporate Accounting': ['Unit 1A','Unit 1B','Unit 2','Unit 3','Unit 4'],
+  '3|Cost Accounting': ['Unit 1','Unit 2','Unit 3','Unit 4','Unit 5','Unit 6'],
+  '3|Economics': ['Unit 1','Unit 2','Unit 3','Unit 4'],
+  '3|English': ['Unit 1','Unit 2','Unit 3','Unit 4'],
+  '3|ES': ['Unit 1','Unit 2'],
+  '3|IKS': ['Unit 1','Unit 2'],
+  '3|Taxation': ['Unit 1','Unit 2','Unit 3','Unit 4','Unit 5','Unit 6','Unit 7','Unit 8']
+};
+
+let customSubjects = {};
+for(const k in BCOM_SUBJECTS){ customSubjects[k] = BCOM_SUBJECTS[k].slice(); }
+
+/* ===== SUBJECT PERSISTENCE (Admin add/remove sticks even after leaving/reopening) ===== */
+function loadCustomSubjects(){
+  try{
+    const saved = JSON.parse(localStorage.getItem('bcom_custom_subjects') || 'null');
+    if(saved && typeof saved === 'object'){
+      for(const k in saved){
+        if(Array.isArray(saved[k])) customSubjects[k] = saved[k].slice();
+      }
+    }
+  }catch(e){}
+}
+function saveCustomSubjects(){
+  try{ localStorage.setItem('bcom_custom_subjects', JSON.stringify(customSubjects)); }
+  catch(e){}
+}
+loadCustomSubjects();
+
+/* ===== VIDEO LECTURE LINKS (Admin add per subject) ===== */
+let videoLinks = {};
+function loadVideoLinks(){
+  try{
+    const saved = JSON.parse(localStorage.getItem('bcom_video_links') || 'null');
+    if(saved && typeof saved === 'object') videoLinks = saved;
+  }catch(e){}
+}
+function saveVideoLinks(){
+  try{ localStorage.setItem('bcom_video_links', JSON.stringify(videoLinks)); }
+  catch(e){}
+}
+loadVideoLinks();
+function videoKey(){ return state.standard+'|'+state.subject; }
+function renderVideoLinkBox(){
+  const box=document.getElementById('videoLinkBox');
+  if(!box) return;
+  const admin = isAdminSession === true;
+  const link = videoLinks[videoKey()];
+  let html='';
+  if(link){
+    html += '<button class="pdf-btn" style="background:linear-gradient(135deg,#ff0000,#cc0000);margin-bottom:6px;" onclick="window.open(\''+link.replace(/'/g,"\\'")+'\',\'_blank\')">▶ Video Lecture જુઓ</button>';
+  }
+  if(admin){
+    html += '<button class="pdf-btn" style="background:linear-gradient(135deg,#1a73e8,#4285f4);margin-bottom:6px;" onclick="setVideoLink()">🎥 Video '+(link?'બદલો':'ઉમેરો')+'</button>';
+    if(link) html += '<button class="pdf-btn" style="background:linear-gradient(135deg,#767676,#999);margin-bottom:6px;" onclick="removeVideoLink()">🗑 Video હટાવો</button>';
+  }
+  box.innerHTML = html;
+}
+function setVideoLink(){
+  if(!isAdminSession){ alert('🔒 ફક્ત Admin જ Video Link ઉમેરી શકે છે.'); return; }
+  const cur = videoLinks[videoKey()] || '';
+  const url = prompt('YouTube / Video Link:', cur);
+  if(url && url.trim()){
+    videoLinks[videoKey()] = url.trim();
+    saveVideoLinks();
+    renderVideoLinkBox();
+  }
+}
+function removeVideoLink(){
+  if(!isAdminSession) return;
+  delete videoLinks[videoKey()];
+  saveVideoLinks();
+  renderVideoLinkBox();
+}
+
+/* ===== PER-UNIT VIDEO LINKS (Admin add per chapter/unit) ===== */
+let unitVideoLinks = {};
+function loadUnitVideoLinks(){
+  try{
+    const saved = JSON.parse(localStorage.getItem('bcom_unit_video_links') || 'null');
+    if(saved && typeof saved === 'object') unitVideoLinks = saved;
+  }catch(e){}
+}
+function saveUnitVideoLinks(){
+  try{ localStorage.setItem('bcom_unit_video_links', JSON.stringify(unitVideoLinks)); }
+  catch(e){}
+}
+loadUnitVideoLinks();
+function setUnitVideo(key){
+  if(!isAdminSession){ alert('🔒 ફક્ત Admin જ Video Link ઉમેરી શકે છે.'); return; }
+  const cur = unitVideoLinks[key] || '';
+  const url = prompt('આ Unit માટે YouTube / Video Link:', cur);
+  if(url && url.trim()){
+    unitVideoLinks[key] = url.trim();
+    saveUnitVideoLinks();
+    renderChapters();
+  }
+}
+function removeUnitVideo(key){
+  if(!isAdminSession) return;
+  delete unitVideoLinks[key];
+  saveUnitVideoLinks();
+  renderChapters();
+}
+
+/* ===== PREVIOUS YEAR PAPERS (Admin add per semester) ===== */
+let prevPapers = {};
+function loadPrevPapers(){
+  try{
+    const saved = JSON.parse(localStorage.getItem('bcom_prev_papers') || 'null');
+    if(saved && typeof saved === 'object') prevPapers = saved;
+  }catch(e){}
+}
+function savePrevPapers(){
+  try{ localStorage.setItem('bcom_prev_papers', JSON.stringify(prevPapers)); }
+  catch(e){}
+}
+loadPrevPapers();
+function getPrevPapers(sem){ return prevPapers[sem] || []; }
+function openPrevPapers(){
+  document.getElementById('prevPapersTitle').textContent = 'જૂના પેપર્સ – B.Com '+state.standard;
+  renderPrevPapersGrid();
+  showScreen('screen-prevpapers');
+}
+function renderPrevPapersGrid(){
+  const grid=document.getElementById('prevPapersGrid');
+  grid.innerHTML='';
+  const admin = isAdminSession === true;
+  const list = getPrevPapers(state.standard);
+  list.forEach((p,idx)=>{
+    const card=document.createElement('div');
+    card.className='subj-card';
+    card.innerHTML = (admin ? '<div class="subj-actions"><span class="subj-icon-btn" title="કાઢી નાખો">🗑</span></div>' : '')
+      + '<div class="subj-name">'+p.title+'</div>';
+    if(admin){
+      card.querySelector('.subj-icon-btn').onclick=(e)=>{ e.stopPropagation(); deletePrevPaper(idx); };
+    }
+    card.querySelector('.subj-name').onclick=()=> openPdfInApp(p.url, p.title, 'prev|'+state.standard+'|'+idx);
+    grid.appendChild(card);
+  });
+  if(admin){
+    const addCard=document.createElement('div');
+    addCard.className='subj-add';
+    addCard.innerHTML='<span class="plus">+</span><span>પેપર ઉમેરો</span>';
+    addCard.onclick=addPrevPaper;
+    grid.appendChild(addCard);
+  }
+  if(list.length===0 && !admin){
+    grid.innerHTML='<div class="empty-note">હજુ કોઈ જૂના પેપર્સ ઉમેર્યા નથી.</div>';
+  }
+}
+function addPrevPaper(){
+  if(!isAdminSession){ alert('🔒 ફક્ત Admin જ પેપર ઉમેરી શકે છે.'); return; }
+  const title=prompt('પેપરનું નામ (દા.ત. "Winter 2024"):');
+  if(!title || !title.trim()) return;
+  const url=prompt('PDF / Google Drive link:');
+  if(!url || !url.trim()) return;
+  if(!prevPapers[state.standard]) prevPapers[state.standard]=[];
+  prevPapers[state.standard].push({title:title.trim(), url:url.trim()});
+  savePrevPapers();
+  renderPrevPapersGrid();
+}
+function deletePrevPaper(idx){
+  if(!isAdminSession) return;
+  const list=prevPapers[state.standard]||[];
+  const cur=list[idx];
+  if(cur && confirm('"'+cur.title+'" કાઢી નાખવું છે?')){
+    list.splice(idx,1);
+    savePrevPapers();
+    renderPrevPapersGrid();
+  }
+}
+
+/* ===== IMPORT / EXPORT SHARED DATA (no-backend friend sharing) ===== */
+function exportSharedData(){
+  if(!isAdminSession){ alert('🔒 ફક્ત Admin જ Export કરી શકે છે.'); return; }
+  const data = {
+    notice: localStorage.getItem('bcom_notice') || '',
+    examDate: localStorage.getItem('bcom_exam_date') || '',
+    customSubjects: customSubjects,
+    videoLinks: videoLinks,
+    unitVideoLinks: unitVideoLinks,
+    prevPapers: prevPapers
+  };
+  const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'college-mitra-data.json';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+function importSharedDataFile(event){
+  const file = event.target.files && event.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e){
+    try{
+      const data = JSON.parse(e.target.result);
+      if(typeof data.notice === 'string') localStorage.setItem('bcom_notice', data.notice);
+      if(typeof data.examDate === 'string') localStorage.setItem('bcom_exam_date', data.examDate);
+      if(data.customSubjects && typeof data.customSubjects === 'object'){
+        customSubjects = data.customSubjects;
+        saveCustomSubjects();
+      }
+      if(data.videoLinks && typeof data.videoLinks === 'object'){
+        videoLinks = data.videoLinks;
+        saveVideoLinks();
+      }
+      if(data.unitVideoLinks && typeof data.unitVideoLinks === 'object'){
+        unitVideoLinks = data.unitVideoLinks;
+        saveUnitVideoLinks();
+      }
+      if(data.prevPapers && typeof data.prevPapers === 'object'){
+        prevPapers = data.prevPapers;
+        savePrevPapers();
+      }
+      renderHome();
+      alert('✅ Data Import થયું! હવે તમને પણ એ જ Notice/Subjects/Papers દેખાશે.');
+    }catch(err){
+      alert('❌ આ ફાઈલ ખોટી છે અથવા વાંચી ના શકાય.');
+    }
+    event.target.value = '';
+  };
+  reader.readAsText(file);
+}
+
+function genericChapters(n){
+  const arr=[];
+  for(let i=1;i<=n;i++) arr.push('એકમ '+i+' (Unit '+i+')');
+  return arr;
+}
+function getChapters(standard, stream, subject){
+  const key = standard + '|' + subject;
+  if(CHAPTER_TITLES[key]) return CHAPTER_TITLES[key];
+  return genericChapters(6);
+}
+function getSubjects(standard){ return customSubjects[standard] || []; }
+function getPdfUrl(sem, subj, idx){
+  const val = PDF_MAP[sem + '|' + subj + '|' + idx];
+  if(!val) return null;
+  return Array.isArray(val) ? val : [val];
+}
+function getFolderUrl(sem, subj){ return FOLDER_MAP[sem + '|' + subj] || null; }
+
+const ICONS = {
+  book:'<svg viewBox="0 0 24 24"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4zm0 15a1 1 0 0 0 1 1h10v-2H5a1 1 0 0 0-1 1z"/></svg>',
+  list:'<svg viewBox="0 0 24 24"><path d="M4 6h4v4H4V6zm6 1h10v2H10V7zM4 14h4v4H4v-4zm6 1h10v2H10v-2z"/></svg>',
+  lang:'<svg viewBox="0 0 24 24"><path d="M12 3l9 4-9 4-9-4 9-4zm0 8l7-3.1V13c0 3-3.4 5.5-7 6.5-3.6-1-7-3.5-7-6.5V7.9L12 11z"/></svg>',
+  grid:'<svg viewBox="0 0 24 24"><path d="M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm10 0h6v6h-6v-6z"/></svg>',
+  clock:'<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 .001 20.001A10 10 0 0 0 12 2zm.5 5v5.6l4.2 2.5-.75 1.3L11 13V7h1.5z"/></svg>',
+  chev:'<svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>'
+};
+
+/* ===== STATE ===== */
+let state = { standard:null, stream:'કોમર્સ', category:null, subject:null };
+let favorites = new Set(JSON.parse(localStorage.getItem('bcom_favs') || '[]'));
+let completed = new Set(JSON.parse(localStorage.getItem('bcom_done') || '[]'));
+let darkMode = localStorage.getItem('bcom_dark') === '1';
+let dailyGoal = parseInt(localStorage.getItem('bcom_goal') || '3');
+let todayDone = parseInt(localStorage.getItem('bcom_today_' + new Date().toDateString()) || '0');
+if(darkMode) document.body.classList.add('dark');
+
+/* ===== STREAK + STUDY STATS ===== */
+let studyStats = JSON.parse(localStorage.getItem('bcom_stats') || '{"streak":0,"bestStreak":0,"totalMinutes":0,"lastActive":null,"sessions":{},"history":[]}');
+function todayKey(){ return new Date().toDateString(); }
+
+function markActiveToday(){
+  const today = todayKey();
+  const last = studyStats.lastActive;
+  if(last === today) return; // already marked
+  if(last){
+    const lastDate = new Date(last);
+    const diff = Math.floor((new Date(today) - lastDate) / 86400000);
+    if(diff === 1) studyStats.streak += 1;
+    else if(diff > 1) studyStats.streak = 1;
+  } else {
+    studyStats.streak = 1;
+  }
+  if(studyStats.streak > studyStats.bestStreak) studyStats.bestStreak = studyStats.streak;
+  studyStats.lastActive = today;
+  saveStats();
+  updateStatsUI();
+  checkAchievements();
+}
+
+function addFocusMinutes(mins){
+  if(mins <= 0) return;
+  studyStats.totalMinutes += mins;
+  const today = todayKey();
+  if(!studyStats.sessions[today]) studyStats.sessions[today] = [];
+  studyStats.sessions[today].push({mins, time: new Date().toLocaleTimeString('gu-IN',{hour:'2-digit',minute:'2-digit'})});
+  // keep last 30 days history
+  studyStats.history = studyStats.history.filter(h => {
+    const d = new Date(h.date);
+    return (Date.now() - d) < 30*86400000;
+  });
+  let dayEntry = studyStats.history.find(h => h.date === today);
+  if(!dayEntry){ dayEntry = {date:today, minutes:0, chapters:0}; studyStats.history.push(dayEntry); }
+  dayEntry.minutes += mins;
+  saveStats();
+  markActiveToday();
+  updateStatsUI();
+  checkAchievements();
+}
+
+function saveStats(){
+  localStorage.setItem('bcom_stats', JSON.stringify(studyStats));
+}
+
+function updateStatsUI(){
+  const s = studyStats;
+  const todaySess = (s.sessions[todayKey()] || []).length;
+  const todayMin = (s.sessions[todayKey()] || []).reduce((a,b)=>a+b.mins,0);
+  const el = (id) => document.getElementById(id);
+  if(el('streakNum')) el('streakNum').textContent = (s.streak||0) + '🔥';
+  if(el('focusNum')) el('focusNum').textContent = todayMin;
+  if(el('sessionNum')) el('sessionNum').textContent = todaySess;
+  if(el('statsStreak')) el('statsStreak').textContent = s.streak || 0;
+  if(el('statsTotalMin')) el('statsTotalMin').textContent = s.totalMinutes || 0;
+  if(el('statsBest')) el('statsBest').textContent = s.bestStreak || 0;
+}
+
+
+function saveProgress(){
+  localStorage.setItem('bcom_favs', JSON.stringify([...favorites]));
+  localStorage.setItem('bcom_done', JSON.stringify([...completed]));
+  localStorage.setItem('bcom_dark', darkMode ? '1' : '0');
+  localStorage.setItem('bcom_goal', dailyGoal);
+  localStorage.setItem('bcom_today_' + new Date().toDateString(), todayDone);
+  saveStats();
+}
+
+
+function chapKey(idx){ return state.standard+'|'+state.subject+'|'+idx; }
+
+/* ===== QUIZ DATA ===== */
+const QUIZ_DATA = {
+  '3|Corporate Accounting': [
+    {q:'Profit prior to incorporation is transferred to:', opts:['Capital Reserve','Goodwill','P&L Account','Share Capital'], ans:0},
+    {q:'When a company is incorporated, the profit earned before incorporation is called:', opts:['Capital Profit','Revenue Profit','Gross Profit','Net Profit'], ans:0},
+    {q:'Pre-incorporation profit is used for:', opts:['Writing off goodwill','Paying dividend','Paying debenture interest','None'], ans:0},
+    {q:'Sales ratio is used to apportion:', opts:['Gross Profit','Rent','Salaries','Depreciation'], ans:0},
+    {q:'Time ratio is generally used for:', opts:['Fixed expenses','Variable expenses','Sales','Purchases'], ans:0}
+  ],
+  '3|Cost Accounting': [
+    {q:'Cost Accounting is mainly used for:', opts:['Cost control & decision making','Tax calculation','Share valuation','Auditing'], ans:0},
+    {q:'Direct material + Direct labour + Direct expenses = ', opts:['Prime Cost','Factory Cost','Total Cost','Works Cost'], ans:0},
+    {q:'Overheads are also known as:', opts:['Indirect costs','Direct costs','Prime costs','Variable costs only'], ans:0},
+    {q:'EOQ stands for:', opts:['Economic Order Quantity','Estimated Order Quantity','Equal Order Quantity','None'], ans:0},
+    {q:'FIFO method is used in:', opts:['Inventory valuation','Depreciation','Wages','Overheads'], ans:0}
+  ],
+  '3|Economics': [
+    {q:'Microeconomics studies:', opts:['Individual units','Whole economy','National income','Inflation only'], ans:0},
+    {q:'Law of demand states that price and quantity demanded are:', opts:['Inversely related','Directly related','Not related','Equal'], ans:0},
+    {q:'Perfect competition has:', opts:['Many buyers and sellers','One seller','Few sellers','Government control'], ans:0},
+    {q:'GDP stands for:', opts:['Gross Domestic Product','Gross Development Product','General Domestic Product','None'], ans:0},
+    {q:'Inflation means:', opts:['Rise in general price level','Fall in prices','Increase in production','None'], ans:0},
+    {q:'Positive cross elasticity means goods are:', opts:['Substitute goods','Complementary goods','Inferior goods','Giffen goods'], ans:0},
+    {q:'Negative cross elasticity means goods are:', opts:['Complementary goods','Substitute goods','Normal goods','Luxury goods'], ans:0}
+  ],
+  '3|Taxation': [
+    {q:'GST stands for:', opts:['Goods and Services Tax','General Sales Tax','Government Service Tax','None'], ans:0},
+    {q:'Income Tax is charged on:', opts:['Income of previous year','Current year income','Next year income','None'], ans:0},
+    {q:'Basic exemption limit for individual (below 60) is approximately:', opts:['₹2,50,000','₹5,00,000','₹1,00,000','₹10,00,000'], ans:0},
+    {q:'CGST is collected by:', opts:['Central Government','State Government','Both','Local body'], ans:0},
+    {q:'TDS stands for:', opts:['Tax Deducted at Source','Tax Deposit Scheme','Total Deduction System','None'], ans:0}
+  ]
+};
+
+let quizState = { key:null, idx:0, score:0, answered:false };
+
+/* ===== TIMER ===== */
+let timerSeconds = 25 * 60;
+let timerInterval = null;
+let timerRunning = false;
+let timerStartSeconds = 25 * 60; // to calculate completed minutes
+
+function updateTimerDisplay(){
+  const m = Math.floor(timerSeconds / 60).toString().padStart(2,'0');
+  const s = (timerSeconds % 60).toString().padStart(2,'0');
+  document.getElementById('timerDisplay').textContent = m + ':' + s;
+}
+function startTimer(){
+  if(timerRunning) return;
+  timerRunning = true;
+  timerInterval = setInterval(()=>{
+    if(timerSeconds <= 0){
+      clearInterval(timerInterval);
+      timerRunning = false;
+      const focused = Math.round(timerStartSeconds / 60);
+      addFocusMinutes(focused);
+      alert('🎉 સમય પૂરો! ' + focused + ' મિનિટ ફોકસ કર્યું. હવે 5 મિનિટ બ્રેક લો. સરસ કામ! 💪');
+      return;
+    }
+    timerSeconds--;
+    updateTimerDisplay();
+  },1000);
+}
+function pauseTimer(){
+  clearInterval(timerInterval);
+  timerRunning = false;
+}
+function resetTimer(){
+  pauseTimer();
+  timerSeconds = 25 * 60;
+  timerStartSeconds = 25 * 60;
+  updateTimerDisplay();
+}
+function setTimer(mins){
+  pauseTimer();
+  timerSeconds = mins * 60;
+  timerStartSeconds = mins * 60;
+  updateTimerDisplay();
+}
+
+
+/* ===== NOTES ===== */
+function openNotes(){
+  document.getElementById('notesArea').value = localStorage.getItem('bcom_notes') || '';
+  showScreen('screen-notes');
+}
+function saveNotes(){
+  localStorage.setItem('bcom_notes', document.getElementById('notesArea').value);
+  document.getElementById('notesSavedMsg').textContent = '✅ નોંધ સેવ થઈ ગઈ!';
+  setTimeout(()=> document.getElementById('notesSavedMsg').textContent = '', 2000);
+}
+
+/* ===== TEXT-TO-SPEECH (read notes aloud) ===== */
+function speakNotes(){
+  const text=(document.getElementById('notesArea').value||'').trim();
+  if(!text){ alert('પહેલા કંઈક નોંધ લખો.'); return; }
+  if(!('speechSynthesis' in window)){ alert('આ ડિવાઇસ/બ્રાઉઝર Text-to-Speech સપોર્ટ નથી કરતું.'); return; }
+  window.speechSynthesis.cancel();
+  const utter=new SpeechSynthesisUtterance(text);
+  utter.lang='gu-IN';
+  utter.rate=0.95;
+  window.speechSynthesis.speak(utter);
+}
+function stopSpeak(){
+  if('speechSynthesis' in window) window.speechSynthesis.cancel();
+}
+
+/* ===== ACHIEVEMENTS ===== */
+const ACHIEVEMENTS = [
+  {id:'first_chap', icon:'📖', title:'પહેલું પગલું', desc:'1 પ્રકરણ પૂર્ણ કરો', check:()=> completed.size >= 1},
+  {id:'five_chap', icon:'📚', title:'5 પ્રકરણ માસ્ટર', desc:'5 પ્રકરણ પૂર્ણ', check:()=> completed.size >= 5},
+  {id:'ten_chap', icon:'🎓', title:'10 પ્રકરણ હીરો', desc:'10 પ્રકરણ પૂર્ણ', check:()=> completed.size >= 10},
+  {id:'streak3', icon:'🔥', title:'3 દિવસ સ્ટ્રીક', desc:'3 દિવસ સતત અભ્યાસ', check:()=> studyStats.streak >= 3},
+  {id:'streak7', icon:'⚡', title:'7 દિવસ વોરિયર', desc:'7 દિવસ સ્ટ્રીક', check:()=> studyStats.streak >= 7},
+  {id:'streak30', icon:'👑', title:'મહિનાનો રાજા', desc:'30 દિવસ સ્ટ્રીક', check:()=> studyStats.streak >= 30},
+  {id:'focus25', icon:'⏱', title:'પહેલો પોમોડોરો', desc:'25 મિનિટ ફોકસ', check:()=> studyStats.totalMinutes >= 25},
+  {id:'focus100', icon:'💪', title:'100 મિનિટ ક્લબ', desc:'કુલ 100 મિનિટ', check:()=> studyStats.totalMinutes >= 100},
+  {id:'focus300', icon:'🧠', title:'ફોકસ માસ્ટર', desc:'કુલ 300 મિનિટ', check:()=> studyStats.totalMinutes >= 300},
+  {id:'quiz_master', icon:'🏅', title:'MCQ ચેમ્પિયન', desc:'કોઈ પણ Quiz પૂરું કરો', check:()=> localStorage.getItem('bcom_quiz_done')==='1'},
+  {id:'goal_day', icon:'🎯', title:'લક્ષ્ય પૂરું', desc:'આજનું લક્ષ્ય પૂર્ણ', check:()=> todayDone >= dailyGoal},
+  {id:'fav5', icon:'⭐', title:'મનપસંદ કલેક્ટર', desc:'5 પ્રકરણ મનપસંદ', check:()=> favorites.size >= 5}
+];
+let unlockedAch = new Set(JSON.parse(localStorage.getItem('bcom_ach') || '[]'));
+
+function checkAchievements(){
+  let newUnlock = false;
+  ACHIEVEMENTS.forEach(a=>{
+    if(!unlockedAch.has(a.id) && a.check()){
+      unlockedAch.add(a.id);
+      newUnlock = true;
+    }
+  });
+  if(newUnlock){
+    localStorage.setItem('bcom_ach', JSON.stringify([...unlockedAch]));
+  }
+}
+
+function openAchievements(){
+  checkAchievements();
+  const grid = document.getElementById('achGrid');
+  grid.innerHTML = '';
+  ACHIEVEMENTS.forEach(a=>{
+    const unlocked = unlockedAch.has(a.id);
+    const card = document.createElement('div');
+    card.className = 'ach-card' + (unlocked ? ' unlocked' : ' locked');
+    card.innerHTML = `<div class="ach-icon">${a.icon}</div>
+      <div class="ach-title">${a.title}</div>
+      <div class="ach-desc">${a.desc}</div>`;
+    grid.appendChild(card);
+  });
+  showScreen('screen-achievements');
+}
+
+/* ===== FLASHCARDS ===== */
+const FLASHCARDS = {
+  'Corporate Accounting': [
+    {q:'Profit prior to incorporation ક્યાં transfer થાય?', a:'Capital Reserve માં'},
+    {q:'Pre-incorporation profit શું કહેવાય?', a:'Capital Profit'},
+    {q:'Sales ratio શેના માટે વપરાય?', a:'Gross Profit ને વહેંચવા'},
+    {q:'Time ratio સામાન્ય રીતે શેના માટે?', a:'Fixed expenses માટે'},
+    {q:'Goodwill ક્યારે write-off થાય?', a:'Pre-incorporation profit થી'}
+  ],
+  'Cost Accounting': [
+    {q:'Prime Cost શું છે?', a:'Direct Material + Direct Labour + Direct Expenses'},
+    {q:'Overheads ને બીજું નામ?', a:'Indirect costs'},
+    {q:'EOQ નો પૂરો અર્થ?', a:'Economic Order Quantity'},
+    {q:'FIFO method ક્યાં વપરાય?', a:'Inventory valuation માં'},
+    {q:'Cost Accounting નો મુખ્ય હેતુ?', a:'Cost control અને decision making'}
+  ],
+  'Economics': [
+    {q:'Microeconomics શું study કરે?', a:'Individual units / firms'},
+    {q:'Law of Demand શું કહે?', a:'Price અને Quantity demanded inversely related'},
+    {q:'Perfect competition માં કેટલા sellers?', a:'Many buyers and sellers'},
+    {q:'GDP નો પૂરો અર્થ?', a:'Gross Domestic Product'},
+    {q:'Positive cross elasticity નો અર્થ?', a:'Substitute goods'},
+    {q:'Negative cross elasticity નો અર્થ?', a:'Complementary goods'},
+    {q:'Inflation એટલે?', a:'General price level માં વધારો'}
+  ],
+  'Taxation': [
+    {q:'GST નો પૂરો અર્થ?', a:'Goods and Services Tax'},
+    {q:'CGST કોણ collect કરે?', a:'Central Government'},
+    {q:'TDS નો અર્થ?', a:'Tax Deducted at Source'},
+    {q:'Income Tax કયા વર્ષની આવક પર?', a:'Previous year ની income પર'},
+    {q:'Basic exemption limit (below 60) અંદાજે?', a:'₹2,50,000'}
+  ],
+  'General': [
+    {q:'સારા અભ્યાસનો સૌથી મહત્વનો નિયમ?', a:'સમજીને ભણો, યાદ રાખવા માટે નહીં'},
+    {q:'Pomodoro technique શું છે?', a:'25 મિન ફોકસ + 5 મિન બ્રેક'},
+    {q:'મુશ્કેલ પ્રકરણ ક્યારે કરવું?', a:'સવારે જ્યારે મગજ તાજું હોય'},
+    {q:'રોજનું કામ કેવી રીતે કરવું?', a:'રોજ થોડું, એક દિવસમાં બધું નહીં'},
+    {q:'પરીક્ષા પહેલાં ડર કેવી રીતે દૂર કરવો?', a:'સારી તૈયારી = આત્મવિશ્વાસ'}
+  ]
+};
+
+let flashState = { list:[], idx:0, flipped:false };
+
+function openFlashcards(){
+  loadFlashcards();
+  showScreen('screen-flash');
+}
+function loadFlashcards(){
+  const subj = document.getElementById('flashSubject').value;
+  flashState.list = FLASHCARDS[subj] || FLASHCARDS['General'];
+  flashState.idx = 0;
+  flashState.flipped = false;
+  renderFlash();
+}
+function renderFlash(){
+  const list = flashState.list;
+  if(!list.length) return;
+  const card = list[flashState.idx];
+  document.getElementById('flashQ').textContent = card.q;
+  document.getElementById('flashA').textContent = card.a;
+  document.getElementById('flashCard').classList.toggle('show-ans', flashState.flipped);
+  document.getElementById('flashProgress').textContent = `કાર્ડ ${flashState.idx+1} / ${list.length}`;
+}
+function flipFlash(){
+  flashState.flipped = !flashState.flipped;
+  document.getElementById('flashCard').classList.toggle('show-ans', flashState.flipped);
+}
+function nextFlash(){
+  if(flashState.idx < flashState.list.length-1){
+    flashState.idx++;
+    flashState.flipped = false;
+    renderFlash();
+  }
+}
+function prevFlash(){
+  if(flashState.idx > 0){
+    flashState.idx--;
+    flashState.flipped = false;
+    renderFlash();
+  }
+}
+
+/* ===== STATS SCREEN ===== */
+function openStats(){
+  updateStatsUI();
+  // today sessions
+  const sessWrap = document.getElementById('todaySessions');
+  const todayS = studyStats.sessions[todayKey()] || [];
+  if(todayS.length === 0){
+    sessWrap.innerHTML = '<div class="empty-note">આજે હજુ કોઈ સેશન નથી. ટાઈમર શરૂ કરો!</div>';
+  } else {
+    sessWrap.innerHTML = todayS.map(s => `
+      <div class="session-item">
+        <div class="s-time">⏱ ${s.mins} મિનિટ</div>
+        <div class="s-date">${s.time}</div>
+      </div>`).join('');
+  }
+  // last 7 days
+  const weekWrap = document.getElementById('weekLog');
+  let html = '';
+  for(let i=6; i>=0; i--){
+    const d = new Date(); d.setDate(d.getDate()-i);
+    const key = d.toDateString();
+    const dayS = studyStats.sessions[key] || [];
+    const mins = dayS.reduce((a,b)=>a+b.mins,0);
+    const label = i===0 ? 'આજે' : d.toLocaleDateString('gu-IN',{weekday:'short',day:'numeric'});
+    html += `<div class="session-item">
+      <div class="s-date">${label}</div>
+      <div class="s-time">${mins > 0 ? mins+' મિન' : '—'} ${dayS.length? '('+dayS.length+' સેશન)':''}</div>
+    </div>`;
+  }
+  weekWrap.innerHTML = html;
+  showScreen('screen-stats');
+}
+function resetStats(){
+  if(confirm('બધા સ્ટેટ્સ (સ્ટ્રીક, ટાઈમ, સેશન) રીસેટ થશે. ખરેખર?')){
+    studyStats = {streak:0,bestStreak:0,totalMinutes:0,lastActive:null,sessions:{},history:[]};
+    unlockedAch = new Set();
+    localStorage.removeItem('bcom_ach');
+    saveStats();
+    updateStatsUI();
+    openStats();
+  }
+}
+function shareStatsWhatsApp(){
+  const msg = '📚 મારો College Mitra Study Progress:\n'
+    + '🔥 સ્ટ્રીક: ' + studyStats.streak + ' દિવસ\n'
+    + '⏱ કુલ સમય: ' + studyStats.totalMinutes + ' મિનિટ\n'
+    + '🏆 શ્રેષ્ઠ સ્ટ્રીક: ' + studyStats.bestStreak + ' દિવસ\n'
+    + '\nહું College Mitra app પર અભ્યાસ કરું છું! 💪';
+  const url = 'https://wa.me/?text=' + encodeURIComponent(msg);
+  window.open(url, '_blank');
+}
+
+
+/* ===== DAILY GOAL ===== */
+function setDailyGoal(){
+  dailyGoal = parseInt(document.getElementById('goalInput').value) || 3;
+  saveProgress();
+  updateGoalUI();
+}
+function updateGoalUI(){
+  document.getElementById('goalInput').value = dailyGoal;
+  document.getElementById('goalStatus').textContent = `આજે ${todayDone} પ્રકરણ પૂર્ણ • લક્ષ્ય ${dailyGoal}`;
+  const remaining = Math.max(0, dailyGoal - todayDone);
+  if(todayDone >= dailyGoal){
+    document.getElementById('goalStatus').textContent += ' 🎉 લક્ષ્ય પૂરું!';
+  } else {
+    document.getElementById('goalStatus').textContent += ` • ${remaining} બાકી`;
+  }
+}
+
+/* ===== CORE UI ===== */
+function renderHome(){
+  const list = document.getElementById('standardList');
+  list.innerHTML='';
+  for(let i=1;i<=6;i++){
+    const row=document.createElement('div');
+    row.className='list-row';
+    row.textContent='B.Com '+i;
+    row.onclick=()=>openStandard(i);
+    list.appendChild(row);
+  }
+  showMotivation();
+  updateGoalUI();
+  updateStatsUI();
+  checkAchievements();
+  renderNoticeBox();
+  renderExamCountdown();
+}
+
+/* ===== NOTICE BOARD (Admin controlled, shown to everyone on this device) ===== */
+function renderNoticeBox(){
+  const box=document.getElementById('noticeBox');
+  const txt=document.getElementById('noticeText');
+  const notice=(localStorage.getItem('bcom_notice')||'').trim();
+  if(notice){
+    txt.textContent=notice;
+    box.style.display='block';
+  } else {
+    box.style.display='none';
+  }
+}
+function saveAdminNotice(){
+  const val=(document.getElementById('adminNoticeInput').value||'').trim();
+  localStorage.setItem('bcom_notice', val);
+  alert(val ? '✅ સૂચના સેવ થઈ.' : 'ખાલી સૂચના સેવ કરી (કંઈ નહીં દેખાય).');
+}
+function clearAdminNotice(){
+  localStorage.removeItem('bcom_notice');
+  document.getElementById('adminNoticeInput').value='';
+  alert('🗑 સૂચના હટાવી.');
+}
+
+/* ===== EXAM COUNTDOWN (Admin controlled) ===== */
+function renderExamCountdown(){
+  const box=document.getElementById('examCountdownBox');
+  const txt=document.getElementById('examCountdownText');
+  const dateStr=localStorage.getItem('bcom_exam_date');
+  if(!dateStr){ box.style.display='none'; return; }
+  const examDate=new Date(dateStr+'T00:00:00');
+  const today=new Date(); today.setHours(0,0,0,0);
+  const diffDays=Math.round((examDate-today)/(1000*60*60*24));
+  if(diffDays>0){
+    txt.textContent='⏳ '+diffDays+' દિવસ બાકી';
+  } else if(diffDays===0){
+    txt.textContent='🔥 આજે પરીક્ષા છે! All the best!';
+  } else {
+    txt.textContent='✅ પરીક્ષા પૂરી થઈ ગઈ';
+  }
+  box.style.display='block';
+}
+function saveAdminExamDate(){
+  const val=document.getElementById('adminExamDate').value;
+  if(!val){ alert('તારીખ પસંદ કરો.'); return; }
+  localStorage.setItem('bcom_exam_date', val);
+  alert('✅ પરીક્ષા તારીખ સેવ થઈ.');
+}
+function clearAdminExamDate(){
+  localStorage.removeItem('bcom_exam_date');
+  document.getElementById('adminExamDate').value='';
+  alert('🗑 Countdown હટાવ્યું.');
+}
+
+
+function renderHomeSearch(){
+  const q=(document.getElementById('homeSearch').value||'').trim();
+  const listCard=document.getElementById('standardList');
+  const results=document.getElementById('homeSearchResults');
+  if(!q){
+    results.style.display='none';
+    listCard.style.display='block';
+    return;
+  }
+  listCard.style.display='none';
+  results.style.display='block';
+  results.innerHTML='';
+  const matches=[];
+  for(let sem=1; sem<=6; sem++){
+    (customSubjects[sem]||[]).forEach(subj=>{
+      if(subj.toLowerCase().includes(q.toLowerCase())) matches.push({sem,subj});
+    });
+  }
+  if(matches.length===0){
+    results.innerHTML='<div class="empty-note">કોઈ વિષય મળ્યો નથી. બીજું નામ અજમાવો.</div>';
+    return;
+  }
+  matches.forEach(m=>{
+    const row=document.createElement('div');
+    row.className='fav-row';
+    row.innerHTML=`<div class="fav-sub">B.Com ${m.sem}</div><div class="fav-title">${m.subj}</div>`;
+    row.onclick=()=>{
+      state.standard=m.sem;
+      state.stream='કોમર્સ';
+      state.category=CATEGORIES[0];
+      openSubject(m.subj);
+    };
+    results.appendChild(row);
+  });
+}
+
+function toggleDark(){
+  darkMode=!darkMode;
+  document.body.classList.toggle('dark', darkMode);
+  const icon = darkMode ? '☀️' : '🌙';
+  document.querySelectorAll('button[title="Dark mode"], header button:last-child').forEach(btn => {
+    if(btn.textContent.includes('🌙') || btn.textContent.includes('☀️')) btn.textContent = icon;
+  });
+  saveProgress();
+}
+
+function openStandard(n){
+  state.standard=n;
+  state.stream='કોમર્સ';
+  document.getElementById('standardTitle').textContent='B.Com '+n;
+  renderCatGrid();
+  showScreen('screen-standard');
+}
+
+function renderCatGrid(){
+  const grid=document.getElementById('catGrid');
+  grid.innerHTML='';
+  CATEGORIES.forEach(c=>{
+    const card=document.createElement('div');
+    card.className='cat-card';
+    card.style.background=c.color;
+    card.innerHTML=ICONS[c.icon]+'<span>'+c.label+'</span>';
+    card.onclick=()=>openCategory(c);
+    grid.appendChild(card);
+  });
+}
+
+function openCategory(cat){
+  state.category=cat;
+  if(cat.key==='mcq'){
+    openQuizList();
+    return;
+  }
+  if(cat.key==='oldpapers'){
+    openPrevPapers();
+    return;
+  }
+  if(cat.key!=='textbooks'){
+    alert(cat.label + ' - B.Com ' + state.standard + ' માટે ટૂંક સમયમાં આવશે.\n\nહમણાં પાઠ્ય-પુસ્તકો અને MCQ વાપરો. મહેનત ચાલુ રાખો! 💪');
+    return;
+  }
+  document.getElementById('subjectsTitle').textContent='પાઠ્ય પુસ્તક – B.Com '+state.standard;
+  renderSubjGrid();
+  showScreen('screen-subjects');
+}
+
+function getProgress(sem, subj){
+  const total=getChapters(sem,null,subj).length;
+  let done=0;
+  for(let i=0;i<total;i++){ if(completed.has(sem+'|'+subj+'|'+i)) done++; }
+  return {done, total};
+}
+
+function renderSubjGrid(){
+  const grid=document.getElementById('subjGrid');
+  grid.innerHTML='';
+  const admin = isAdminSession === true;
+  getSubjects(state.standard).forEach((subj,idx)=>{
+    const prog=getProgress(state.standard, subj);
+    const card=document.createElement('div');
+    card.className='subj-card';
+    card.innerHTML=`
+      ${admin ? `<div class="subj-actions">
+        <span class="subj-icon-btn" title="નામ બદલો">✎</span>
+        <span class="subj-icon-btn" title="કાઢી નાખો">🗑</span>
+      </div>` : ''}
+      <div class="subj-name">${subj}</div>
+      ${prog.total ? `<div class="subj-progress">${prog.done}/${prog.total}</div>` : ''}
+    `;
+    if(admin){
+      const [editBtn, delBtn] = card.querySelectorAll('.subj-icon-btn');
+      editBtn.onclick=(e)=>{ e.stopPropagation(); editSubject(idx); };
+      delBtn.onclick=(e)=>{ e.stopPropagation(); deleteSubject(idx); };
+    }
+    card.querySelector('.subj-name').onclick=()=>openSubject(subj);
+    grid.appendChild(card);
+  });
+  if(admin){
+    const addCard=document.createElement('div');
+    addCard.className='subj-add';
+    addCard.innerHTML='<span class="plus">+</span><span>વિષય ઉમેરો</span>';
+    addCard.onclick=addSubject;
+    grid.appendChild(addCard);
+  }
+}
+
+function addSubject(){
+  if(!isAdminSession){ alert('🔒 ફક્ત Admin જ વિષય ઉમેરી શકે છે.'); return; }
+  const name=prompt('નવા વિષયનું નામ:');
+  if(name && name.trim()){
+    customSubjects[state.standard].push(name.trim());
+    saveCustomSubjects();
+    renderSubjGrid();
+  }
+}
+function editSubject(idx){
+  if(!isAdminSession){ alert('🔒 ફક્ત Admin જ વિષયનું નામ બદલી શકે છે.'); return; }
+  const cur=customSubjects[state.standard][idx];
+  const name=prompt('વિષયનું નામ બદલો:', cur);
+  if(name && name.trim()){
+    customSubjects[state.standard][idx]=name.trim();
+    saveCustomSubjects();
+    renderSubjGrid();
+  }
+}
+function deleteSubject(idx){
+  if(!isAdminSession){ alert('🔒 ફક્ત Admin જ વિષય કાઢી શકે છે.'); return; }
+  const cur=customSubjects[state.standard][idx];
+  if(confirm('"'+cur+'" કાઢી નાખવો છે?')){
+    customSubjects[state.standard].splice(idx,1);
+    saveCustomSubjects();
+    renderSubjGrid();
+  }
+}
+
+function openSubject(subj){
+  state.subject=subj;
+  document.getElementById('chaptersTitle').textContent=subj+' – B.Com '+state.standard;
+  document.getElementById('chapSearch').value='';
+  renderVideoLinkBox();
+  renderChapters();
+  showScreen('screen-chapters');
+}
+
+function renderChapters(){
+  const q=(document.getElementById('chapSearch').value||'').trim();
+  const all=getChapters(state.standard, state.stream, state.subject);
+  const items=all.map((t,i)=>({title:t, idx:i})).filter(o=>o.title.includes(q));
+
+  const doneCount=all.filter((t,i)=>completed.has(chapKey(i))).length;
+  const pct=all.length ? Math.round(doneCount/all.length*100) : 0;
+  document.getElementById('chapProgress').innerHTML=
+    `<div class="prog-label">${doneCount}/${all.length} પૂર્ણ (${pct}%) — આગળ વધો! 💪</div>
+     <div class="prog-track"><div class="prog-fill" style="width:${pct}%"></div></div>`;
+
+  const wrap=document.getElementById('chapList');
+  wrap.innerHTML='';
+  if(items.length===0){
+    wrap.innerHTML='<div class="empty-note">કોઈ પ્રકરણ મળ્યું નથી.</div>';
+    return;
+  }
+  items.forEach(({title,idx})=>{
+    const key=chapKey(idx);
+    const isFav=favorites.has(key);
+    const isDone=completed.has(key);
+    const pdfUrls = getPdfUrl(state.standard, state.subject, idx);
+    const folderUrl = getFolderUrl(state.standard, state.subject);
+
+    let bodyContent = '';
+    const accessHint = getAccessHintHtml();
+    if(folderUrl){
+      const fKey = state.standard+'|'+state.subject+'|folder';
+      bodyContent = `
+        <div style="text-align:center;">
+          <p style="margin:0 0 10px;">📁 આ વિષયની સંપૂર્ણ સામગ્રી Google Drive માં છે</p>
+          <button class="pdf-btn" onclick="openPdfInApp('${folderUrl.replace(/'/g,"\\'")}', '${title.replace(/'/g,"\\'")}', '${fKey}')">
+            📂 Folder ખોલો
+          </button>
+          ${accessHint}
+        </div>`;
+    } else if(pdfUrls && pdfUrls.length > 0){
+      let buttons = pdfUrls.map((url, i) => {
+        const pKey = state.standard+'|'+state.subject+'|'+idx+(pdfUrls.length>1?('|'+i):'');
+        return `
+          <button class="pdf-btn" style="margin-top:${i===0?'8px':'10px'};" onclick="openPdfInApp('${url.replace(/'/g,"\\'")}', '${title.replace(/'/g,"\\'")} - PDF ${i+1}', '${pKey}')">
+            📖 PDF ${pdfUrls.length > 1 ? (i+1)+' ' : ''}ખોલો
+          </button>`;
+      }).join('');
+      bodyContent = `
+        <div style="text-align:center;">
+          <p style="margin:0 0 10px;">📄 આ પ્રકરણ માટે PDF ઉપલબ્ધ છે</p>
+          ${buttons}
+          ${accessHint}
+        </div>`;
+    } else {
+      bodyContent = `
+        <div style="text-align:center;padding:8px 0;">
+          <p style="margin:0 0 8px;">આ પ્રકરણ માટે PDF ટૂંક સમયમાં આવશે.</p>
+          <p style="font-size:13px;color:#2f7d32;font-weight:600;">જ્યાં સુધી આવે ત્યાં સુધી MCQ કરો અને નોંધ લખો! 💪</p>
+        </div>`;
+    }
+
+    const unitVideoUrl = unitVideoLinks[key];
+    let videoSection = '';
+    if(unitVideoUrl){
+      videoSection += `<button class="pdf-btn" style="background:linear-gradient(135deg,#ff0000,#cc0000);margin-top:10px;" onclick="window.open('${unitVideoUrl.replace(/'/g,"\\'")}','_blank')">▶ Video Lecture જુઓ</button>`;
+    }
+    if(isAdminSession){
+      videoSection += `<button class="pdf-btn" style="background:linear-gradient(135deg,#1a73e8,#4285f4);margin-top:8px;" onclick="setUnitVideo('${key}')">🎥 Video ${unitVideoUrl?'બદલો':'ઉમેરો'}</button>`;
+      if(unitVideoUrl) videoSection += `<button class="pdf-btn" style="background:linear-gradient(135deg,#767676,#999);margin-top:8px;" onclick="removeUnitVideo('${key}')">🗑 Video હટાવો</button>`;
+    }
+    if(videoSection){
+      bodyContent += `<div style="text-align:center;">${videoSection}</div>`;
+    }
+
+    const card=document.createElement('div');
+    card.className='chap-card';
+    card.innerHTML=`
+      <div class="chap-head" data-i="${idx}">
+        <label class="chk"><input type="checkbox" ${isDone?'checked':''}></label>
+        <span class="chap-title">${title}</span>
+        <span class="star ${isFav?'active':''}">${isFav?'★':'☆'}</span>
+        ${ICONS.chev}
+      </div>
+      <div class="chap-bar"></div>
+      <div class="chap-body"><div class="chap-body-inner">${bodyContent}</div></div>
+    `;
+    const head=card.querySelector('.chap-head');
+    const checkbox=card.querySelector('.chk input');
+    const star=card.querySelector('.star');
+    checkbox.addEventListener('click', e=>e.stopPropagation());
+    checkbox.addEventListener('change', ()=>{ toggleDone(key, checkbox.checked); });
+    star.addEventListener('click', e=>{ e.stopPropagation(); toggleFav(key); });
+    head.addEventListener('click', ()=>{
+      const body=card.querySelector('.chap-body');
+      const isOpen=head.classList.toggle('open');
+      body.style.maxHeight = isOpen ? body.scrollHeight+'px' : '0px';
+    });
+    wrap.appendChild(card);
+  });
+}
+
+function toggleDone(key, val){
+  if(val){
+    completed.add(key);
+    todayDone++;
+    markActiveToday();
+  } else {
+    completed.delete(key);
+    todayDone = Math.max(0, todayDone-1);
+  }
+  saveProgress();
+  updateGoalUI();
+  renderChapters();
+  checkAchievements();
+}
+
+function toggleFav(key){
+  if(favorites.has(key)) favorites.delete(key); else favorites.add(key);
+  saveProgress();
+  renderChapters();
+}
+
+/* ===== QUIZ ===== */
+function openQuizList(){
+  document.getElementById('quizListTitle').textContent = 'MCQ Quiz – B.Com '+state.standard;
+  const wrap = document.getElementById('quizList');
+  wrap.innerHTML = '';
+  const subjects = getSubjects(state.standard);
+  let hasAny = false;
+  subjects.forEach(subj=>{
+    const key = state.standard+'|'+subj;
+    if(QUIZ_DATA[key]){
+      hasAny = true;
+      const card = document.createElement('div');
+      card.className = 'quiz-card';
+      card.innerHTML = `<h3>📝 ${subj}</h3><p>${QUIZ_DATA[key].length} પ્રશ્નો • અજમાવો!</p>`;
+      card.onclick = ()=>startQuiz(key, subj);
+      wrap.appendChild(card);
+    }
+  });
+  if(!hasAny){
+    wrap.innerHTML = '<div class="empty-note">આ semester માટે હજુ Quiz તૈયાર નથી.<br>B.Com 3 માં Corporate, Cost, Economics, Taxation માટે Quiz છે.<br><br>મહેનત ચાલુ રાખો! 💪</div>';
+  }
+  showScreen('screen-quiz-list');
+}
+
+function startQuiz(key, subj){
+  quizState = { key, idx:0, score:0, answered:false };
+  document.getElementById('quizTitle').textContent = subj;
+  renderQuizQ();
+  showScreen('screen-quiz');
+}
+
+function renderQuizQ(){
+  const data = QUIZ_DATA[quizState.key];
+  if(!data || quizState.idx >= data.length){
+    showQuizResult();
+    return;
+  }
+  const q = data[quizState.idx];
+  document.getElementById('quizProgress').textContent = `પ્રશ્ન ${quizState.idx+1} / ${data.length}`;
+  let optsHtml = q.opts.map((o,i)=>`
+    <button class="quiz-opt" onclick="answerQuiz(${i})">${String.fromCharCode(65+i)}. ${o}</button>
+  `).join('');
+  document.getElementById('quizBody').innerHTML = `
+    <div class="quiz-q">${q.q}</div>
+    ${optsHtml}
+  `;
+  quizState.answered = false;
+}
+
+function answerQuiz(optIdx){
+  if(quizState.answered) return;
+  quizState.answered = true;
+  const data = QUIZ_DATA[quizState.key];
+  const q = data[quizState.idx];
+  const buttons = document.querySelectorAll('.quiz-opt');
+  buttons.forEach((btn,i)=>{
+    btn.classList.add('disabled');
+    if(i === q.ans) btn.classList.add('correct');
+    else if(i === optIdx) btn.classList.add('wrong');
+  });
+  if(optIdx === q.ans) quizState.score++;
+  setTimeout(()=>{
+    quizState.idx++;
+    renderQuizQ();
+  }, 850);
+}
+
+function showQuizResult(){
+  const data = QUIZ_DATA[quizState.key];
+  const total = data.length;
+  const pct = Math.round(quizState.score/total*100);
+  let msg = pct >= 80 ? 'શાનદાર! તમે તૈયાર છો 🔥' : pct >= 50 ? 'સારું છે, થોડું વધુ અભ્યાસ કરો 💪' : 'ફરીથી અજમાવો, તમે કરી શકો છો!';
+  localStorage.setItem('bcom_quiz_done','1');
+  markActiveToday();
+  checkAchievements();
+  document.getElementById('quizProgress').textContent = '';
+  document.getElementById('quizBody').innerHTML = `
+    <div class="quiz-score">
+      <h2>${quizState.score} / ${total}</h2>
+      <p>તમારો સ્કોર: ${pct}%</p>
+      <p style="font-weight:600;color:#2f7d32;margin-bottom:18px;">${msg}</p>
+      <button class="pdf-btn" onclick="startQuiz(quizState.key, document.getElementById('quizTitle').textContent)">🔄 ફરીથી અજમાવો</button>
+      <button class="pdf-btn" style="margin-top:10px;background:linear-gradient(135deg,#1a73e8,#4285f4);" onclick="openQuizList()">← Quiz યાદી</button>
+    </div>
+  `;
+}
+
+
+function openFavorites(){
+  const wrap=document.getElementById('favList');
+  wrap.innerHTML='';
+  const bookmarks = getPdfBookmarks();
+  if(bookmarks.length>0){
+    const head=document.createElement('div');
+    head.style.cssText='font-weight:700;font-size:14px;color:#8c5a1c;margin:4px 0 8px;';
+    head.textContent='🔖 બુકમાર્ક કરેલ PDF';
+    wrap.appendChild(head);
+    bookmarks.forEach(b=>{
+      const row=document.createElement('div');
+      row.className='fav-row';
+      row.innerHTML=`<div class="fav-sub">🔖 Bookmark</div><div class="fav-title">${b.title}</div>`;
+      row.onclick=()=> openPdfInApp(b.url, b.title, b.key);
+      wrap.appendChild(row);
+    });
+    const head2=document.createElement('div');
+    head2.style.cssText='font-weight:700;font-size:14px;color:#8c5a1c;margin:14px 0 8px;';
+    head2.textContent='★ મનપસંદ પ્રકરણો';
+    wrap.appendChild(head2);
+  }
+  if(favorites.size===0){
+    const empty=document.createElement('div');
+    empty.className='empty-note';
+    empty.innerHTML='હજુ કોઈ પ્રકરણ મનપસંદ નથી.<br>પ્રકરણ પર ☆ ટેપ કરો.<br><br>મનપસંદ પ્રકરણો ઝડપથી શોધી શકાય છે!';
+    wrap.appendChild(empty);
+  } else {
+    [...favorites].forEach(key=>{
+      const parts=key.split('|');
+      const idx=parts.pop();
+      const sem=parts.shift();
+      const subj=parts.join('|');
+      const chapters=getChapters(Number(sem), null, subj);
+      const title=chapters[Number(idx)] || '—';
+      const row=document.createElement('div');
+      row.className='fav-row';
+      row.innerHTML=`<div class="fav-sub">B.Com ${sem} · ${subj}</div><div class="fav-title">★ ${title}</div>`;
+      row.onclick=()=>{
+        state.standard=Number(sem);
+        state.stream='કોમર્સ';
+        openSubject(subj);
+      };
+      wrap.appendChild(row);
+    });
+  }
+  showScreen('screen-favorites');
+}
+
+function openTools(){ showScreen('screen-tools'); }
+
+function openPdfInApp(url, title, pdfKey){
+  if(!url) return;
+  // Access control
+  if(!canAccessPdf(pdfKey || url)){
+    const limit = getGuestLimit();
+    const used = getGuestOpened().length;
+    alert('🔒 Guest માટે માત્ર ' + limit + ' PDF ની મંજૂરી છે.\nઆપે ' + used + '/' + limit + ' વાપરી લીધી.\n\nપૂરી PDF માટે Gmail થી લૉગિન કરો! 📧');
+    return;
+  }
+  recordPdfOpen(pdfKey || url);
+  currentPdfUrl = url;
+  currentPdfBaseUrl = url;
+  currentPdfKey = pdfKey || url;
+  pdfZoomLevel = 100;
+  let src = url;
+  if(src.includes('drive.google.com') && src.includes('/view')){
+    src = src.replace('/view', '/preview');
+  }
+  showScreen('screen-pdf');
+  document.getElementById('pdfPageInfo').textContent = title || 'PDF';
+  document.getElementById('pdfIframe').src = src;
+  const bmBtn = document.getElementById('pdfBookmarkBtn');
+  if(bmBtn) bmBtn.textContent = isPdfBookmarked(currentPdfKey) ? '✅' : '🔖';
+}
+
+/* ===== PDF ZOOM (font size) ===== */
+let pdfZoomLevel = 100;
+let currentPdfKey = null;
+let currentPdfBaseUrl = null;
+function applyPdfZoom(){
+  if(!currentPdfBaseUrl) return;
+  const iframe = document.getElementById('pdfIframe');
+  let base = currentPdfBaseUrl;
+  if(base.includes('drive.google.com') && base.includes('/view')){
+    base = base.replace('/view', '/preview');
+  }
+  const src = base.split('#')[0] + '#zoom=' + pdfZoomLevel;
+  iframe.src = src;
+}
+function pdfZoomIn(){
+  pdfZoomLevel = Math.min(300, pdfZoomLevel + 25);
+  applyPdfZoom();
+}
+function pdfZoomOut(){
+  pdfZoomLevel = Math.max(50, pdfZoomLevel - 25);
+  applyPdfZoom();
+}
+
+/* ===== PDF BOOKMARK ===== */
+function getPdfBookmarks(){
+  try{ return JSON.parse(localStorage.getItem('bcom_pdf_bookmarks') || '[]'); }
+  catch(e){ return []; }
+}
+function isPdfBookmarked(key){
+  return getPdfBookmarks().some(b=>b.key===key);
+}
+function togglePdfBookmark(){
+  if(!currentPdfKey) return;
+  let list = getPdfBookmarks();
+  const idx = list.findIndex(b=>b.key===currentPdfKey);
+  const bmBtn = document.getElementById('pdfBookmarkBtn');
+  if(idx>=0){
+    list.splice(idx,1);
+    localStorage.setItem('bcom_pdf_bookmarks', JSON.stringify(list));
+    if(bmBtn) bmBtn.textContent='🔖';
+  } else {
+    list.push({key: currentPdfKey, url: currentPdfBaseUrl, title: (document.getElementById('pdfPageInfo').textContent||'PDF')});
+    localStorage.setItem('bcom_pdf_bookmarks', JSON.stringify(list));
+    if(bmBtn) bmBtn.textContent='✅';
+  }
+}
+
+let currentPdfUrl = null;
+function openPdfExternal(){
+  if(currentPdfUrl){
+    let link = currentPdfUrl.replace('/preview', '/view');
+    window.open(link, '_blank');
+  }
+}
+function closePdf(){
+  document.getElementById('pdfIframe').src = 'about:blank';
+  showScreen('screen-chapters');
+}
+
+function showScreen(id){
+  ['screen-home','screen-standard','screen-subjects','screen-chapters','screen-favorites','screen-pdf','screen-quiz-list','screen-quiz','screen-tools','screen-notes','screen-achievements','screen-flash','screen-stats','screen-admin','screen-prevpapers'].forEach(s=>{
+    const el = document.getElementById(s);
+    if(el) el.style.display = (s===id) ? 'block' : 'none';
+  });
+  if(typeof chatOpen !== 'undefined' && chatOpen){
+    chatOpen = false;
+    const panel = document.getElementById('chatPanel');
+    const fab = document.getElementById('robotFab');
+    if(panel) panel.classList.remove('open');
+    if(fab) fab.classList.add('pulse');
+  }
+  document.getElementById('phone').scrollTop=0;
+  window.scrollTo(0,0);
+}
+
+function goHome(){ showScreen('screen-home'); }
+function goStandard(){ showScreen('screen-standard'); }
+function goSubjects(){ renderSubjGrid(); showScreen('screen-subjects'); }
+
+/* ===== AI STUDY ROBOT (study-only) ===== */
+const STUDY_BOT = {
+  greetings: [
+    'નમસ્તે! 🤖 હું તમારો Study Robot છું. B.Com અભ્યાસ + પરીક્ષા તારીખ મદદ. શું પૂછવું છે?',
+    'હેલો! GST, Accounting, Economics, પરીક્ષા તારીખ, Quiz... કંઈ પૂછો!'
+  ],
+  offTopic: [
+    'માફ કરો 🤖 હું ફક્ત અભ્યાસ (B.Com) સંબંધિત મદદ કરું છું. વિષય, પરીક્ષા તારીખ, Quiz, મોટિવેશન પૂછો!',
+    'હું Study Robot છું — ગેમ/મૂવી માટે નહીં. અભ્યાસ વિશે પૂછો! 📚'
+  ],
+  replies: [
+    {keys:['नमस्ते','નમસ્તે','hello','hi','હેલો','કેમ છો','kem cho'], res:'નમસ્તે! 🤖 અભ્યાસ કેમ ચાલે છે? વિષય, પરીક્ષા તારીખ કે ટિપ પૂછો.'},
+    {keys:['મોટિવેશન','motivation','પ્રેરણા','હિંમત','થાક'], res:'🔥 સખ્ત મહેનત કરો — સફળતા તમારી જ છે! રોજ થોડું કરો તો પરીક્ષા પહેલાં બધું પૂરું થઈ જશે. હારો નહીં!'},
+    {keys:['ટિપ્સ','tips','અભ્યાસ કેવી રીતે','કેવી રીતે ભણવું','study tips'], res:'💡 સરળ નિયમો:\n1) એક સમયે એક જ વિષય\n2) સમજીને લખો, યાદ રાખવા માટે નહીં\n3) રોજ થોડું કરો\n4) મુશ્કેલ પ્રકરણ સવારે કરો\n5) પોતાને પૂછો: “આ શું છે?”'},
+    {keys:['pomodoro','પોમોડોરો','timer','ટાઈમર','ફોકસ'], res:'⏱ Pomodoro: 25 મિનિટ ફોકસ → 5 મિનિટ બ્રેક. નીચેનું ⏱ બટન દબાવો.'},
+    {keys:['quiz','mcq','ક્વિઝ','પ્રશ્ન'], res:'📝 Quiz: Home → B.Com 3 → MCQs. Corporate, Cost, Economics, Taxation માટે Quiz તૈયાર છે.'},
+    {keys:['flash','ફ્લેશ','કાર્ડ'], res:'🃏 ફ્લેશકાર્ડ Home પર “ફ્લેશકાર્ડ” બટનથી ખોલો.'},
+
+    /* ===== EXAM DATES ===== */
+    {keys:['પરીક્ષા તારીખ','exam date','exam dates','તારીખ','time table','ટાઈમ ટેબલ','ક્યારે પરીક્ષા','semester exam','સેમેસ્ટર પરીક્ષા'], res:'📅 B.Com પરીક્ષા તારીખ (સામાન્ય પેટર્ન 2026):\n\n• Odd Sem (1,3,5): સામાન્ય રીતે Nov–Dec\n• Even Sem (2,4,6): સામાન્ય રીતે April–May\n• ATKT/External: Aug–Sep પણ થાય\n\n🔴 સૌથી મહત્વનું: તમારી યુનિવર્સિટીની official website જુઓ!\n• Gujarat University: gujaratuniversity.ac.in\n• Saurashtra University: saurashtrauniversity.ac.in (Time Table)\n• MKBU / બીજી: પોતાની college/uni site\n\nસપ્ટેમ્બર 2026 માં Saurashtra Uni માં B.Com Sem external exams ચાલુ/આવનારા છે. Exact date માટે uni portal check કરો.'},
+    {keys:['gujarat university','ગુજરાત યુનિવર્સિટી','gu exam'], res:'📅 Gujarat University (GU):\nપરીક્ષા તારીખો વારંવાર revise થાય છે (Eid, CA clash વગેરે).\nLatest time-table માટે:\n→ gujaratuniversity.ac.in\n→ Exam section / Circulars\nHall ticket પરની તારીખને final માનો.'},
+    {keys:['saurashtra','સૌરાષ્ટ્ર'], res:'📅 Saurashtra University:\nTime Table: saurashtrauniversity.ac.in → Exam → Time Table\nSep 2026 માં B.Com Sem-1/2 External & Sem-3/4 External ના papers જોવા મળે છે.\nExact date માટે official download કરો.'},
+
+    /* ===== SUBJECTS ===== */
+    {keys:['gst','goods and services','જીએસટી'], res:'GST = Goods and Services Tax (2017થી).\n• CGST → Central Govt\n• SGST → State Govt\n• IGST → Inter-state\n• TDS = Tax Deducted at Source\nInput Tax Credit (ITC) મહત્વનું concept છે.\nB.Com 3 Taxation માં વધુ PDF/Quiz છે.'},
+    {keys:['prime cost','પ્રાઈમ કોસ્ટ'], res:'Prime Cost = Direct Material + Direct Labour + Direct Expenses.\nFactory Cost = Prime Cost + Factory Overheads.'},
+    {keys:['eoq','economic order'], res:'EOQ = Economic Order Quantity.\nફોર્મ્યુલા: √(2DS/H) જ્યાં D=Annual demand, S=Order cost, H=Holding cost per unit.'},
+    {keys:['fifo'], res:'FIFO = First In First Out.\nInventory valuation method — પહેલા આવેલો stock પહેલા વેચાય/વપરાય એમ માનવામાં આવે.'},
+    {keys:['pre-incorporation','profit prior','કેપિટલ રિઝર્વ','capital reserve'], res:'Profit prior to incorporation = Capital Profit.\n→ Capital Reserve માં transfer થાય.\nGoodwill write-off અથવા capital loss માટે વપરાય. Dividend માટે નહીં.'},
+    {keys:['microeconomics','માઇક્રો'], res:'Microeconomics = individual units (consumer, firm, market) study.\nLaw of Demand: Price ↑ → Quantity demanded ↓ (inverse).'},
+    {keys:['gdp','inflation','ઇન્ફ્લેશન'], res:'GDP = Gross Domestic Product (દેશમાં ઉત્પાદિત માલ-સેવાની કુલ કિંમત).\nInflation = general price level વધારો.\nPositive cross elasticity = Substitute\nNegative = Complementary'},
+    {keys:['cross elasticity','ક્રોસ'], res:'Cross Elasticity of Demand:\n• Positive → Substitute goods (tea-coffee)\n• Negative → Complementary (car-petrol)'},
+    {keys:['overhead','ઓવરહેડ'], res:'Overheads = Indirect costs (rent, salary of supervisor, depreciation વગેરે).\nPrime Cost માં નહીં આવે.'},
+    {keys:['journal','જર્નલ','ledger','લેજર'], res:'Journal = પહેલી એન્ટ્રી (chronological).\nLedger = account-wise classification.\nTrial Balance → Ledger balances થી બને.'},
+    {keys:['depreciation','ડેપ્રિસિએશન'], res:'Depreciation = fixed asset ની value ઘટાડો.\nMethods: Straight Line, WDV (Written Down Value), Sum of Years Digits વગેરે.'},
+    {keys:['balance sheet','બેલેન્સ શીટ'], res:'Balance Sheet = Assets = Liabilities + Capital (સમીકરણ).\nFinancial position દર્શાવે છે.'},
+    {keys:['income tax','આવકવેરો','exemption'], res:'Income Tax (Individuals below 60):\nBasic exemption limit ≈ ₹2,50,000 (old regime reference).\nLatest slab માટે Income Tax Dept. / Finance Act check કરો. New vs Old regime અલગ છે.'},
+
+    {keys:['સ્ટ્રીક','streak','સ્ટેટ્સ','stats'], res:'📊 સ્ટ્રીક અને ફોકસ Home પર દેખાય. ટાઈમર પૂરું કરો તો મિનિટ ઉમેરાય.'},
+    {keys:['બેજ','achievement','અચીવ'], res:'🏆 બેજ: પ્રકરણ પૂરા કરો, સ્ટ્રીક, ટાઈમર, Quiz. Home → “બેજ”.'},
+    {keys:['નોંધ','notes','નોટ'], res:'📝 નોંધો: Tools (⏱) → “મારી નોંધો ખોલો”.'},
+    {keys:['પીડીએફ','pdf','પુસ્તક','book'], res:'📖 પાઠ્ય-પુસ્તકો: B.Com પસંદ → પાઠ્ય-પુસ્તકો → વિષય → પ્રકરણ.'},
+    {keys:['ડાર્ક','dark mode','રાત'], res:'🌙 ડાર્ક મોડ: Home ઉપર જમણે 🌙 બટન.'},
+    {keys:['લક્ષ્ય','goal','ડેઈલી'], res:'🎯 આજનો લક્ષ્ય Home પર સેટ કરો.'},
+    {keys:['મદદ','help','કેવી રીતે વાપરવું','app'], res:'🤖 App:\n• B.Com 1–6\n• પાઠ્ય-પુસ્તક / MCQ\n• ફ્લેશકાર્ડ, બેજ, સ્ટેટ્સ\n• ટાઈમર + નોંધો\n• પરીક્ષા તારીખ પૂછો → હું જવાબ આપું'},
+    {keys:['ધન્યવાદ','thank','આભાર','thanks'], res:'આપનું સ્વાગત! 💪 અભ્યાસ ચાલુ રાખો.'},
+    {keys:['bye','બાય','જાઉં'], res:'અભ્યાસ સારો થાય! 📚 સફળતા તમારી સાથે!'}
+  ]
+};
+
+let chatOpen = false;
+let chatInitialized = false;
+
+function toggleChat(){
+  chatOpen = !chatOpen;
+  const panel = document.getElementById('chatPanel');
+  const fab = document.getElementById('robotFab');
+  if(!panel || !fab) return;
+  panel.classList.toggle('open', chatOpen);
+  fab.classList.toggle('pulse', !chatOpen);
+  if(chatOpen && !chatInitialized){
+    chatInitialized = true;
+    addBotMsg(STUDY_BOT.greetings[Math.floor(Math.random()*STUDY_BOT.greetings.length)]);
+  }
+  if(chatOpen) setTimeout(()=>{ const i=document.getElementById('chatInput'); if(i) i.focus(); }, 200);
+}
+
+function addBotMsg(text){
+  const wrap = document.getElementById('chatMessages');
+  if(!wrap) return;
+  const div = document.createElement('div');
+  div.className = 'chat-msg bot';
+  div.textContent = text;
+  wrap.appendChild(div);
+  wrap.scrollTop = wrap.scrollHeight;
+}
+
+function addUserMsg(text){
+  const wrap = document.getElementById('chatMessages');
+  if(!wrap) return;
+  const div = document.createElement('div');
+  div.className = 'chat-msg user';
+  div.textContent = text;
+  wrap.appendChild(div);
+  wrap.scrollTop = wrap.scrollHeight;
+}
+
+function isStudyRelated(q){
+  const lower = q.toLowerCase();
+  const off = ['movie','ગેમ','game','song','music','love','girlfriend','boyfriend','cricket','football','politics','joke','મજાક','મૂવી'];
+  if(off.some(w => lower.includes(w))) return false;
+  return true;
+}
+
+function getBotReply(q){
+  const lower = q.toLowerCase().trim();
+  if(!lower) return 'કંઈક લખો... અભ્યાસ / પરીક્ષા તારીખ વિશે પૂછો!';
+
+  for(const r of STUDY_BOT.replies){
+    if(r.keys.some(k => lower.includes(k.toLowerCase()))) return r.res;
+  }
+
+  if(lower.includes('accounting') || lower.includes('એકાઉન્ટ') || lower.includes('corporate') || lower.includes('cost accounting')){
+    return 'Accounting:\n• Corporate Accounting → Pre-incorporation profit, Capital Reserve, Sales/Time ratio\n• Cost Accounting → Prime Cost, Overheads, EOQ, FIFO\nPDF + Quiz + Flashcard B.Com 3 માં છે. કોઈ specific term પૂછો!';
+  }
+  if(lower.includes('economics') || lower.includes('ઇકોનોમિક્સ') || lower.includes('અર્થશાસ્ત્ર') || lower.includes('demand')){
+    return 'Economics:\n• Micro = individual units\n• Law of Demand = inverse relation\n• GDP, Inflation, Cross elasticity\nQuiz & Flashcard B.Com 3 માં છે.';
+  }
+  if(lower.includes('tax') || lower.includes('ટેક્સ') || lower.includes('આવક') || lower.includes('taxation')){
+    return 'Taxation / GST:\nGST, CGST, SGST, ITC, TDS, Income Tax basic exemption.\nB.Com 3 Taxation folder + Quiz ઉપલબ્ધ. Specific પ્રશ્ન પૂછો!';
+  }
+  if(lower.includes('university') || lower.includes('યુનિ') || lower.includes('college')){
+    return '📅 પરીક્ષા તારીખ માટે તમારી યુનિવર્સિટીની official website જુઓ:\n• GU → gujaratuniversity.ac.in\n• Saurashtra → saurashtrauniversity.ac.in\n• બીજી uni → પોતાની site\n“પરીક્ષા તારીખ” લખીને પૂછો તો સામાન્ય પેટર્ન કહું.';
+  }
+
+  if(!isStudyRelated(q)){
+    return STUDY_BOT.offTopic[Math.floor(Math.random()*STUDY_BOT.offTopic.length)];
+  }
+
+  return 'સમજાયું નહીં 🤖\nઆ અજમાવો:\n• “પરીક્ષા તારીખ”\n• “GST શું છે?”\n• “Prime Cost”\n• “અભ્યાસ ટિપ્સ”\n• “Quiz કેવી રીતે?”\nઅથવા વિષયનું નામ લખો.';
+}
+
+function sendChat(){
+  const input = document.getElementById('chatInput');
+  if(!input) return;
+  const text = (input.value || '').trim();
+  if(!text) return;
+  input.value = '';
+  addUserMsg(text);
+  const typing = document.createElement('div');
+  typing.className = 'chat-typing';
+  typing.id = 'typingInd';
+  typing.textContent = '🤖 લખે છે...';
+  const wrap = document.getElementById('chatMessages');
+  if(wrap){ wrap.appendChild(typing); wrap.scrollTop = 9999; }
+
+  setTimeout(()=>{
+    const t = document.getElementById('typingInd');
+    if(t) t.remove();
+    addBotMsg(getBotReply(text));
+  }, 450 + Math.random()*400);
+}
+
+function sendQuick(text){
+  const input = document.getElementById('chatInput');
+  if(input) input.value = text;
+  sendChat();
+}
+
+/* ===== LOGIN + GUEST PDF LIMIT + ADMIN ===== */
+const ADMIN_PASSWORD = 'admin@2026'; // Admin panel password
+let currentUser = null;
+let isAdminSession = localStorage.getItem('bcom_admin_ok') === '1';
+try {
+  // Guest sessions are NOT remembered across app opens — only a real Gmail
+  // login persists. This way, every fresh open shows the login screen again.
+  const savedUser = JSON.parse(localStorage.getItem('bcom_user') || 'null');
+  if(savedUser && !savedUser.guest){
+    currentUser = savedUser;
+  } else if(savedUser && savedUser.guest){
+    localStorage.removeItem('bcom_user');
+  }
+} catch(e){ currentUser = null; }
+
+function getAdminSettings(){
+  try {
+    return JSON.parse(localStorage.getItem('bcom_admin_settings') || '{"guestLimit":2}');
+  } catch(e){ return { guestLimit: 2 }; }
+}
+function getGuestLimit(){
+  const n = parseInt(getAdminSettings().guestLimit, 10);
+  return isNaN(n) ? 2 : Math.max(0, n);
+}
+function getGuestOpened(){
+  try { return JSON.parse(localStorage.getItem('bcom_guest_pdfs') || '[]'); }
+  catch(e){ return []; }
+}
+function isGuestUser(){
+  return !currentUser || currentUser.guest === true;
+}
+function hasFullPdfAccess(){
+  // Full access: real login (not guest) OR admin session
+  if(isAdminSession) return true;
+  if(currentUser && !currentUser.guest && currentUser.email && currentUser.email !== 'guest@local') return true;
+  return false;
+}
+function canAccessPdf(pdfKey){
+  if(hasFullPdfAccess()) return true;
+  const opened = getGuestOpened();
+  if(pdfKey && opened.includes(pdfKey)) return true; // already unlocked
+  return opened.length < getGuestLimit();
+}
+function recordPdfOpen(pdfKey){
+  if(hasFullPdfAccess()) return;
+  if(!pdfKey) return;
+  let opened = getGuestOpened();
+  if(!opened.includes(pdfKey)){
+    opened.push(pdfKey);
+    localStorage.setItem('bcom_guest_pdfs', JSON.stringify(opened));
+  }
+}
+function getAccessHintHtml(){
+  if(hasFullPdfAccess()){
+    return '<p style="font-size:12px;color:#2f7d32;margin:8px 0 0;">✅ Full PDF access (Login)</p>';
+  }
+  const used = getGuestOpened().length;
+  const limit = getGuestLimit();
+  const left = Math.max(0, limit - used);
+  if(left <= 0){
+    return '<div class="lock-note">🔒 Guest મર્યાદા પૂરી ('+used+'/'+limit+'). પૂરી PDF માટે Gmail લૉગિન કરો!</div>';
+  }
+  return '<div class="lock-note">👤 Guest: '+used+'/'+limit+' PDF વપરાઈ • બાકી '+left+' • Full access માટે Login કરો</div>';
+}
+
+function isValidEmail(e){
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
+}
+
+function doLogin(){
+  const name = (document.getElementById('loginName').value || '').trim();
+  const email = (document.getElementById('loginEmail').value || '').trim().toLowerCase();
+  const err = document.getElementById('loginErr');
+  if(!name || name.length < 2){
+    err.textContent = 'કૃપા કરીને નામ લખો (ઓછામાં ઓછા 2 અક્ષર).';
+    return;
+  }
+  if(!email || !isValidEmail(email)){
+    err.textContent = 'સાચું Gmail / email લખો (જેમ કે name@gmail.com).';
+    return;
+  }
+  currentUser = { name, email, loginAt: new Date().toISOString(), guest: false };
+  localStorage.setItem('bcom_user', JSON.stringify(currentUser));
+  err.textContent = '';
+  applyLoginUI();
+  alert('✅ લૉગિન સફળ! હવે બધી PDF ખોલી શકો છો.');
+  showWaChannelModal();
+}
+
+function doGuestLogin(){
+  currentUser = { name: 'Guest', email: 'guest@local', loginAt: new Date().toISOString(), guest: true };
+  // Intentionally NOT saved to localStorage — guest mode should not persist
+  // across app opens; next time the app opens it should show the login screen again.
+  applyLoginUI();
+  alert('👤 Guest મોડ: માત્ર ' + getGuestLimit() + ' PDF ખોલી શકાશે. Full access માટે Gmail લૉગિન કરો.');
+  showWaChannelModal();
+}
+
+/* ===== WHATSAPP CHANNEL POPUP ===== */
+function showWaChannelModal(){
+  if(sessionStorage.getItem('wa_channel_shown')) return;
+  document.getElementById('waChannelModal').classList.remove('hidden');
+  sessionStorage.setItem('wa_channel_shown', '1');
+}
+function closeWaChannelModal(){
+  document.getElementById('waChannelModal').classList.add('hidden');
+}
+
+function doLogout(){
+  if(!confirm('લૉગઆઉટ કરવું છે?')) return;
+  currentUser = null;
+  localStorage.removeItem('bcom_user');
+  document.getElementById('loginOverlay').classList.remove('hidden');
+  document.getElementById('userChip').style.display = 'none';
+  document.getElementById('loginName').value = '';
+  document.getElementById('loginEmail').value = '';
+  document.getElementById('loginErr').textContent = '';
+}
+
+function applyLoginUI(){
+  const adminBtn = document.getElementById('adminBtn');
+  if(currentUser && currentUser.name){
+    document.getElementById('loginOverlay').classList.add('hidden');
+    const chip = document.getElementById('userChip');
+    chip.style.display = 'flex';
+    let label = currentUser.name.split(' ')[0];
+    if(currentUser.guest) label += ' (Guest)';
+    else if(isAdminSession) label += ' 🔐';
+    document.getElementById('userNameShort').textContent = label;
+    document.getElementById('userAv').textContent = (currentUser.name[0] || '?').toUpperCase();
+    if(adminBtn) adminBtn.style.display = isAdminSession ? 'inline-flex' : 'none';
+  } else {
+    document.getElementById('loginOverlay').classList.remove('hidden');
+    document.getElementById('userChip').style.display = 'none';
+    if(adminBtn) adminBtn.style.display = 'none';
+  }
+  renderNoticeBox();
+  renderExamCountdown();
+}
+
+/* Admin */
+function promptAdminLogin(){
+  const pass = prompt('Admin password દાખલ કરો:');
+  if(pass === null) return;
+  if(pass === ADMIN_PASSWORD){
+    isAdminSession = true;
+    localStorage.setItem('bcom_admin_ok', '1');
+    if(!currentUser){
+      currentUser = { name: 'Admin', email: 'admin@local', loginAt: new Date().toISOString(), guest: false, admin: true };
+      localStorage.setItem('bcom_user', JSON.stringify(currentUser));
+    }
+    applyLoginUI();
+    openAdminPanel();
+  } else {
+    alert('❌ ખોટો password.');
+  }
+}
+function openAdminPanel(){
+  if(!isAdminSession){
+    promptAdminLogin();
+    return;
+  }
+  const u = currentUser || {};
+  document.getElementById('adminUserInfo').innerHTML =
+    '<b>Name:</b> '+(u.name||'-')+'<br><b>Email:</b> '+(u.email||'-')+
+    '<br><b>Type:</b> '+(u.guest?'Guest':(u.admin?'Admin':'Logged-in'))+
+    '<br><b>Full PDF:</b> '+(hasFullPdfAccess()?'Yes ✅':'No 🔒');
+  document.getElementById('adminGuestLimit').value = getGuestLimit();
+  document.getElementById('adminGuestUsed').textContent = getGuestOpened().length + ' / ' + getGuestLimit();
+  document.getElementById('adminNoticeInput').value = localStorage.getItem('bcom_notice') || '';
+  document.getElementById('adminExamDate').value = localStorage.getItem('bcom_exam_date') || '';
+  showScreen('screen-admin');
+}
+function saveAdminSettings(){
+  const n = parseInt(document.getElementById('adminGuestLimit').value, 10);
+  const limit = isNaN(n) ? 2 : Math.max(0, Math.min(50, n));
+  localStorage.setItem('bcom_admin_settings', JSON.stringify({ guestLimit: limit }));
+  document.getElementById('adminGuestUsed').textContent = getGuestOpened().length + ' / ' + limit;
+  alert('✅ Guest PDF limit = ' + limit + ' સેવ થયું.');
+}
+function resetGuestQuota(){
+  if(!confirm('આ ડિવાઇસનું Guest PDF ક્વોટા રીસેટ કરવું?')) return;
+  localStorage.setItem('bcom_guest_pdfs', '[]');
+  document.getElementById('adminGuestUsed').textContent = '0 / ' + getGuestLimit();
+  alert('✅ Guest ક્વોટા રીસેટ.');
+}
+function adminLogout(){
+  isAdminSession = false;
+  localStorage.removeItem('bcom_admin_ok');
+  alert('Admin session બંધ.');
+  goHome();
+  applyLoginUI();
+}
+
+/* Init */
+if(darkMode){
+  document.querySelectorAll('button[title="Dark mode"]').forEach(btn => btn.textContent = '☀️');
+}
+applyLoginUI();
+renderHome();
+updateTimerDisplay();
+updateStatsUI();
+</script>
+
+</body>
+</html>
